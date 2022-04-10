@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include logikview *.css
+recursive-include logikview *.csv
+recursive-include logikview *.html
+recursive-include logikview *.ico
+recursive-include logikview *.js
+recursive-include logikview *.json
+recursive-include logikview *.md
+recursive-include logikview *.png
+recursive-include logikview *.py
+recursive-include logikview *.svg
+recursive-include logikview *.txt
+recursive-exclude logikview *.pyc
