@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CONS-ID.-.#####",
+ "creation": "2022-04-11 12:09:12.962596",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "consumable_id",
+  "type_of_consumable",
+  "attachments_section",
+  "data_sheet",
+  "certificate",
+  "additional_details_section",
+  "barcode_label",
+  "expiry_date",
+  "manufacturer",
+  "date_received",
+  "date_opened",
+  "opened_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "consumable_id",
+   "fieldtype": "Data",
+   "label": "Consumable ID"
+  },
+  {
+   "fieldname": "type_of_consumable",
+   "fieldtype": "Select",
+   "label": "Type of Consumable",
+   "options": "\nChemicals\nReagents\nTest Kits\nPlastic\nConsumable Gloves"
+  },
+  {
+   "fieldname": "data_sheet",
+   "fieldtype": "Attach",
+   "label": "Data Sheet"
+  },
+  {
+   "fieldname": "certificate",
+   "fieldtype": "Attach",
+   "label": "Certificate"
+  },
+  {
+   "fieldname": "barcode_label",
+   "fieldtype": "Barcode",
+   "label": "Barcode Label"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Data",
+   "label": "Manufacturer"
+  },
+  {
+   "fieldname": "date_received",
+   "fieldtype": "Date",
+   "label": "Date Received"
+  },
+  {
+   "fieldname": "date_opened",
+   "fieldtype": "Date",
+   "label": "Date Opened"
+  },
+  {
+   "fieldname": "opened_by",
+   "fieldtype": "Link",
+   "label": "Opened By",
+   "options": "User"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "additional_details_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-12 12:34:59.835888",
+ "modified_by": "Administrator",
+ "module": "Logikview App",
+ "name": "Consumable Inventory",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "EQ-ID.-.#####",
+ "creation": "2022-04-11 11:54:08.439688",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "primary_details_section",
+  "equipment_id",
+  "manufacturer",
+  "supplier",
+  "column_break_5",
+  "model",
+  "number",
+  "serial_number",
+  "section_break_9",
+  "date_of_purchase",
+  "location",
+  "calibration",
+  "performance_monitoring_status",
+  "column_break_14",
+  "certificates",
+  "maintenance_status",
+  "section_break_17",
+  "barcode_label"
+ ],
+ "fields": [
+  {
+   "fieldname": "equipment_id",
+   "fieldtype": "Data",
+   "label": "Equipment ID"
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Data",
+   "label": "Manufacturer"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fieldname": "number",
+   "fieldtype": "Data",
+   "label": "Number"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Data",
+   "label": "Serial Number"
+  },
+  {
+   "fieldname": "date_of_purchase",
+   "fieldtype": "Date",
+   "label": "Date Of Purchase"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "calibration",
+   "fieldtype": "Data",
+   "label": "Calibration"
+  },
+  {
+   "fieldname": "performance_monitoring_status",
+   "fieldtype": "Data",
+   "label": "Performance Monitoring Status"
+  },
+  {
+   "fieldname": "certificates",
+   "fieldtype": "Attach",
+   "label": "Certificates"
+  },
+  {
+   "fieldname": "maintenance_status",
+   "fieldtype": "Data",
+   "label": "Maintenance Status"
+  },
+  {
+   "fieldname": "barcode_label",
+   "fieldtype": "Barcode",
+   "label": "Barcode Label"
+  },
+  {
+   "fieldname": "primary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Details"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Other Info"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "Barcode"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-12 11:33:40.453504",
+ "modified_by": "Administrator",
+ "module": "Logikview App",
+ "name": "Equipment Inventory",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

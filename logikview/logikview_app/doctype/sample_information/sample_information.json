@@ -1,0 +1,280 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SAMPLEINFO-{YY}-{######}",
+ "creation": "2022-04-11 10:37:48.866655",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lab_number",
+  "primary_details_section",
+  "system_reference_number",
+  "sample_description",
+  "number_of_sub_samples",
+  "section",
+  "section_and_other_details_section",
+  "name_of_tests",
+  "sample_location",
+  "storage",
+  "house_number",
+  "column_break_12",
+  "ear_tag_no",
+  "kill_no",
+  "kill_date",
+  "section_break_15",
+  "batch_no",
+  "sample_collection_point_scp",
+  "vrd_unit",
+  "species",
+  "breed",
+  "matrix",
+  "column_break_23",
+  "amount",
+  "age",
+  "sex",
+  "weight",
+  "sample_condition",
+  "sample_status",
+  "section_break_29",
+  "info_registered_by_initials",
+  "date_info_registered_ddmmyy",
+  "date_sample_discarded",
+  "discarded_by",
+  "date_lo_inserting_discard_info",
+  "date_sent_to_subcontracted_lab_where_applicable",
+  "lo_inserting_subcontacting_information"
+ ],
+ "fields": [
+  {
+   "fieldname": "system_reference_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "System Reference Number",
+   "options": "Lab Information",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sample_description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sample Description",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_sub_samples",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number of Sub Samples",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_tests",
+   "fieldtype": "Select",
+   "label": "Name of Test(s)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Select",
+   "label": "Section",
+   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sample_location",
+   "fieldtype": "Select",
+   "label": "Sample Location",
+   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance\nSub Contracted Lab\nReception\nDiscarded"
+  },
+  {
+   "default": "0",
+   "fieldname": "storage",
+   "fieldtype": "Check",
+   "label": "Storage"
+  },
+  {
+   "fieldname": "house_number",
+   "fieldtype": "Data",
+   "label": "House Number"
+  },
+  {
+   "fieldname": "ear_tag_no",
+   "fieldtype": "Data",
+   "label": "Ear Tag No.",
+   "unique": 1
+  },
+  {
+   "fieldname": "kill_no",
+   "fieldtype": "Data",
+   "label": "Kill No.",
+   "unique": 1
+  },
+  {
+   "fieldname": "kill_date",
+   "fieldtype": "Date",
+   "label": "Kill Date"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "Batch No.",
+   "unique": 1
+  },
+  {
+   "fieldname": "sample_collection_point_scp",
+   "fieldtype": "Select",
+   "label": "Sample Collection Point (SCP)"
+  },
+  {
+   "fieldname": "vrd_unit",
+   "fieldtype": "Select",
+   "label": "VRD Unit",
+   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit"
+  },
+  {
+   "fieldname": "species",
+   "fieldtype": "Select",
+   "label": "Species",
+   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nPoultry (Duck)\nPoultry (Sea Gull)\nWild birds\nPoultry (Broiler, Layer)\nTurkey\nDuck\nSwine (Fattener, Sow , Boar)\nPoultry (Broiler, Layer,Pullet, Day-old)"
+  },
+  {
+   "fieldname": "breed",
+   "fieldtype": "Data",
+   "label": "Breed"
+  },
+  {
+   "fieldname": "matrix",
+   "fieldtype": "Select",
+   "label": "Matrix"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Data",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Select",
+   "label": "Sex",
+   "options": "\nMale\nFemale\nN/A"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "sample_condition",
+   "fieldtype": "Data",
+   "label": "Sample Condition"
+  },
+  {
+   "fieldname": "sample_status",
+   "fieldtype": "Select",
+   "label": "Sample Status",
+   "options": "\nNew\nPending\nFinished\nSuspended\nWaiting\nRejected\nApproved"
+  },
+  {
+   "fieldname": "info_registered_by_initials",
+   "fieldtype": "Data",
+   "label": "Info Registered By (Initials)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_info_registered_ddmmyy",
+   "fieldtype": "Date",
+   "label": "Date Info Registered (dd/mm/yy)"
+  },
+  {
+   "fieldname": "date_sample_discarded",
+   "fieldtype": "Date",
+   "label": "Date Sample Discarded"
+  },
+  {
+   "fieldname": "discarded_by",
+   "fieldtype": "Data",
+   "label": "Discarded By"
+  },
+  {
+   "fieldname": "date_lo_inserting_discard_info",
+   "fieldtype": "Date",
+   "label": "Date L.O Inserting Discard Info"
+  },
+  {
+   "fieldname": "date_sent_to_subcontracted_lab_where_applicable",
+   "fieldtype": "Date",
+   "label": "Date sent to subcontracted lab (where applicable)"
+  },
+  {
+   "fieldname": "lo_inserting_subcontacting_information",
+   "fieldtype": "Data",
+   "label": "L.O inserting subcontacting information"
+  },
+  {
+   "fieldname": "lab_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lab Number"
+  },
+  {
+   "fieldname": "primary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Details"
+  },
+  {
+   "fieldname": "section_and_other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Test and Sample Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Other Sample Information"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "Registration Details"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-12 17:17:07.116934",
+ "modified_by": "Administrator",
+ "module": "Logikview App",
+ "name": "Sample Information",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,276 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ANALYSIS.-.#####",
+ "creation": "2022-04-11 11:26:09.969110",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "analysis_number",
+  "reference_info_section",
+  "lab_number_reference",
+  "system_reference",
+  "test_details",
+  "name_of_test",
+  "section",
+  "status",
+  "column_break_9",
+  "date_started",
+  "date_finalised",
+  "column_break_12",
+  "lo_performing_test",
+  "testing_scheme",
+  "column_break_15",
+  "testing_lab",
+  "method_used",
+  "section_break_18",
+  "result",
+  "result_information",
+  "section_break_21",
+  "cut_off_level",
+  "units",
+  "ccbeta",
+  "ccalpha",
+  "lod",
+  "loq",
+  "column_break_28",
+  "result_info_registered_by",
+  "date_result_info_registered",
+  "date_of_result_issue",
+  "result_issued_by",
+  "section_break_30",
+  "comments_for_result",
+  "comment_for_result_inserted_by",
+  "date_comment_for_result_inserted",
+  "date_result_authorised_ddmmyy",
+  "result_authorised_by_initials"
+ ],
+ "fields": [
+  {
+   "fieldname": "analysis_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Analysis Number"
+  },
+  {
+   "fieldname": "lab_number_reference",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Lab Number Reference",
+   "options": "Sample Information",
+   "reqd": 1
+  },
+  {
+   "fieldname": "system_reference",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "System Reference ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_test",
+   "fieldtype": "Data",
+   "label": "Name of Test"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Select",
+   "label": "Section",
+   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nNew\nPending\nFinished\nSuspended\nWaiting\nRejected\nApproved"
+  },
+  {
+   "fieldname": "date_started",
+   "fieldtype": "Data",
+   "label": "Date Started"
+  },
+  {
+   "fieldname": "date_finalised",
+   "fieldtype": "Data",
+   "label": "Date Finalised"
+  },
+  {
+   "fieldname": "lo_performing_test",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "L.O Performing Test",
+   "reqd": 1
+  },
+  {
+   "fieldname": "testing_scheme",
+   "fieldtype": "Select",
+   "label": "Testing Scheme",
+   "reqd": 1
+  },
+  {
+   "fieldname": "testing_lab",
+   "fieldtype": "Select",
+   "label": "Testing Lab",
+   "reqd": 1
+  },
+  {
+   "fieldname": "method_used",
+   "fieldtype": "Select",
+   "label": "Method Used"
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Select",
+   "label": "Result"
+  },
+  {
+   "fieldname": "result_information",
+   "fieldtype": "Long Text",
+   "label": "Result Information"
+  },
+  {
+   "fieldname": "cut_off_level",
+   "fieldtype": "Data",
+   "label": "Cut off level"
+  },
+  {
+   "fieldname": "units",
+   "fieldtype": "Data",
+   "label": "Units"
+  },
+  {
+   "fieldname": "ccbeta",
+   "fieldtype": "Data",
+   "label": "CCBeta"
+  },
+  {
+   "fieldname": "ccalpha",
+   "fieldtype": "Data",
+   "label": "Ccalpha"
+  },
+  {
+   "fieldname": "lod",
+   "fieldtype": "Data",
+   "label": "LOD"
+  },
+  {
+   "fieldname": "loq",
+   "fieldtype": "Data",
+   "label": "LOQ"
+  },
+  {
+   "fieldname": "result_info_registered_by",
+   "fieldtype": "Data",
+   "label": "Result Info Registered By"
+  },
+  {
+   "fieldname": "date_result_info_registered",
+   "fieldtype": "Date",
+   "label": "Date Result Info Registered"
+  },
+  {
+   "fieldname": "date_of_result_issue",
+   "fieldtype": "Date",
+   "label": "Date of Result Issue"
+  },
+  {
+   "fieldname": "result_issued_by",
+   "fieldtype": "Data",
+   "label": "Result Issued By"
+  },
+  {
+   "fieldname": "comments_for_result",
+   "fieldtype": "Long Text",
+   "label": "Comments For Result"
+  },
+  {
+   "fieldname": "comment_for_result_inserted_by",
+   "fieldtype": "Data",
+   "label": "Comment For Result Inserted By"
+  },
+  {
+   "fieldname": "date_comment_for_result_inserted",
+   "fieldtype": "Date",
+   "label": "Date Comment For Result Inserted"
+  },
+  {
+   "fieldname": "date_result_authorised_ddmmyy",
+   "fieldtype": "Date",
+   "label": "Date Result Authorised (dd/mm/yy)"
+  },
+  {
+   "fieldname": "result_authorised_by_initials",
+   "fieldtype": "Data",
+   "label": "Result Authorised By (Initials)"
+  },
+  {
+   "fieldname": "reference_info_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Info"
+  },
+  {
+   "fieldname": "test_details",
+   "fieldtype": "Section Break",
+   "label": "Test Details"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Section Break",
+   "label": "Method Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break",
+   "label": "Other Info"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break",
+   "label": "Result Status"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "Additional Info"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-12 17:32:57.735449",
+ "modified_by": "Administrator",
+ "module": "Logikview App",
+ "name": "Analysis Information",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

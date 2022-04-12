@@ -1,0 +1,240 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series.-.####",
+ "creation": "2022-04-10 12:14:16.987814",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "primary_details_section",
+  "naming_series",
+  "system_reference_number",
+  "batch_code",
+  "column_break_3",
+  "customer_sample_reference",
+  "security_seal_no",
+  "section_break_3",
+  "sampling_date",
+  "sampling_time",
+  "sampling_officersender",
+  "column_break_10",
+  "section",
+  "vrd_unit",
+  "section_break_13",
+  "date_sample_received",
+  "time_sample_received",
+  "received_by_lab_officer",
+  "recorded_by_lab_officer",
+  "sample_status_details_section",
+  "submission_form_status",
+  "sample_state_on_receipt",
+  "rejected_date",
+  "rejection_notification_no",
+  "rejected_by",
+  "rejection_reason",
+  "rejection_reason_other",
+  "sample_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "batch_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Batch Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_sample_reference",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Sample Reference",
+   "reqd": 1
+  },
+  {
+   "fieldname": "security_seal_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Security Seal No.",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "sampling_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Sampling Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sampling_time",
+   "fieldtype": "Datetime",
+   "label": "Sampling Time",
+   "mandatory_depends_on": "eval:doc.section=='Microbiology'"
+  },
+  {
+   "fieldname": "sampling_officersender",
+   "fieldtype": "Data",
+   "label": "Sampling Officer/Sender",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vrd_unit",
+   "fieldtype": "Select",
+   "label": "VRD Unit",
+   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit\nSafety of the Food Chain Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_sample_received",
+   "fieldtype": "Date",
+   "label": "Date Sample Received",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_sample_received",
+   "fieldtype": "Datetime",
+   "label": "Time Sample Received",
+   "reqd": 1
+  },
+  {
+   "fieldname": "received_by_lab_officer",
+   "fieldtype": "Link",
+   "label": "Received By (Lab officer)",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.received_by_lab_officer != \"\"",
+   "fieldname": "recorded_by_lab_officer",
+   "fieldtype": "Data",
+   "label": "Recorded By (Lab officer)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "submission_form_status",
+   "fieldtype": "Select",
+   "label": "Submission Form Status",
+   "options": "\nAccepted\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sample_state_on_receipt",
+   "fieldtype": "Select",
+   "label": "Sample State on Receipt",
+   "options": "\nSatisfactory\nNot Satisfactory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rejected_date",
+   "fieldtype": "Date",
+   "label": "Rejected Date"
+  },
+  {
+   "fieldname": "rejection_notification_no",
+   "fieldtype": "Data",
+   "label": "Rejection Notification No."
+  },
+  {
+   "depends_on": "eval:doc.submission_form_status == 'Rejected'",
+   "fieldname": "rejected_by",
+   "fieldtype": "Data",
+   "label": "Rejected By"
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Select",
+   "label": "Rejection Reason",
+   "mandatory_depends_on": "eval:doc.submission_form_status == 'Rejected'",
+   "options": "Quantity\nSterility Conditions\nWrong Container\nWrong Matrix\nTemperature of Sample\nOther"
+  },
+  {
+   "depends_on": "eval:doc.rejection_reason == 'Other'",
+   "fieldname": "rejection_reason_other",
+   "fieldtype": "Data",
+   "label": "Rejection Reason Other"
+  },
+  {
+   "fieldname": "sample_details",
+   "fieldtype": "Attach",
+   "label": "Sample Details"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Section and VRD Details"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Select",
+   "label": "Section",
+   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance"
+  },
+  {
+   "fieldname": "system_reference_number",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "System Reference Number",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "primary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Details"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sample_status_details_section",
+   "fieldtype": "Section Break",
+   "label": "Sample Status Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "LAB-INFO"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-12 17:08:58.116586",
+ "modified_by": "Administrator",
+ "module": "Logikview App",
+ "name": "Lab Information",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

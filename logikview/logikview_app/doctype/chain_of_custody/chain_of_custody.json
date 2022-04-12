@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "COC.-.#####",
+ "creation": "2022-04-11 11:46:30.388729",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "chain_of_custody_reference",
+  "section_break_2",
+  "lab_number_reference",
+  "location_of_sample",
+  "column_break_5",
+  "start_date",
+  "end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "chain_of_custody_reference",
+   "fieldtype": "Data",
+   "label": "Chain of Custody Reference"
+  },
+  {
+   "fieldname": "lab_number_reference",
+   "fieldtype": "Data",
+   "label": "Lab Number Reference"
+  },
+  {
+   "fieldname": "location_of_sample",
+   "fieldtype": "Data",
+   "label": "Location of Sample"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-12 11:24:20.736437",
+ "modified_by": "Administrator",
+ "module": "Logikview App",
+ "name": "Chain of Custody",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

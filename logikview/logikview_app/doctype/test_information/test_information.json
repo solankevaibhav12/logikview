@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "TEST-INFO.-.#####",
+ "creation": "2022-04-11 11:50:44.930953",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test_name",
+  "section",
+  "lower_cut_off_level",
+  "upper_cut_off_level",
+  "uom"
+ ],
+ "fields": [
+  {
+   "fieldname": "test_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Test Name"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Section",
+   "options": "\nChemical Analysis\nDiagnostics(Serology and Immunology)\nParasitology\nMicrobiology\nAntimicrobial Resistance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lower_cut_off_level",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lower cut off Level",
+   "reqd": 1
+  },
+  {
+   "fieldname": "upper_cut_off_level",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Upper cut off Level",
+   "reqd": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Select",
+   "label": "UOM",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-12 11:32:10.779439",
+ "modified_by": "Administrator",
+ "module": "Logikview App",
+ "name": "Test Information",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
