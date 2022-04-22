@@ -14,23 +14,32 @@
   "certificate",
   "additional_details_section",
   "barcode_label",
+  "column_break_8",
   "expiry_date",
   "manufacturer",
+  "column_break_11",
   "date_received",
   "date_opened",
-  "opened_by"
+  "opened_by",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "consumable_id",
    "fieldtype": "Data",
-   "label": "Consumable ID"
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Consumable ID",
+   "reqd": 1
   },
   {
    "fieldname": "type_of_consumable",
    "fieldtype": "Select",
+   "in_global_search": 1,
+   "in_list_view": 1,
    "label": "Type of Consumable",
-   "options": "\nChemicals\nReagents\nTest Kits\nPlastic\nConsumable Gloves"
+   "options": "\nChemicals\nReagents\nTest Kits\nPlastic\nConsumable Gloves",
+   "reqd": 1
   },
   {
    "fieldname": "data_sheet",
@@ -60,7 +69,9 @@
   {
    "fieldname": "date_received",
    "fieldtype": "Date",
-   "label": "Date Received"
+   "in_list_view": 1,
+   "label": "Date Received",
+   "reqd": 1
   },
   {
    "fieldname": "date_opened",
@@ -70,6 +81,7 @@
   {
    "fieldname": "opened_by",
    "fieldtype": "Link",
+   "in_global_search": 1,
    "label": "Opened By",
    "options": "User"
   },
@@ -84,11 +96,29 @@
    "fieldname": "additional_details_section",
    "fieldtype": "Section Break",
    "label": "Additional Details"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Consumable Inventory",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-04-12 12:34:59.835888",
+ "modified": "2022-04-19 11:54:49.928736",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Consumable Inventory",

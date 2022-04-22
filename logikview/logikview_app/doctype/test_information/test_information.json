@@ -11,7 +11,8 @@
   "section",
   "lower_cut_off_level",
   "upper_cut_off_level",
-  "uom"
+  "uom",
+  "amended_from"
  ],
  "fields": [
   {
@@ -24,6 +25,7 @@
    "fieldname": "section",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Section",
    "options": "\nChemical Analysis\nDiagnostics(Serology and Immunology)\nParasitology\nMicrobiology\nAntimicrobial Resistance",
    "reqd": 1
@@ -46,12 +48,23 @@
    "fieldname": "uom",
    "fieldtype": "Select",
    "label": "UOM",
+   "options": "\n\u00b5g/kg\n\u00b5g/L\nmg/kg\nmg/L\nng/ml\nng/g\nIU/ml\nAntibody Titre\n\u00b5g/ml",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Test Information",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-04-12 11:32:10.779439",
+ "modified": "2022-04-19 11:53:54.958033",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Test Information",

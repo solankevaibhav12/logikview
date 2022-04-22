@@ -27,9 +27,7 @@ frappe.ui.form.on('Sample Information', {
 		if (frm.doc.section == "Chemical Analysis"){
 
 			set_field_options("species", ["Bees","Bovine","Caprine",
-			"Equine","Fish","Lagomorph","Multi Species","Ovine","Poultry","Swine"
-			
-						])
+			"Equine","Fish","Lagomorph","Multi Species","Ovine","Poultry","Swine"])
 		}
 		if(frm.doc.section == "Diagnostics (Serology and Immunology)"){
 
@@ -53,7 +51,7 @@ frappe.ui.form.on('Sample Information', {
 			set_field_options("sex", ["Male","Female","N/A"])
 		}
 		else{
-			set_field_options("sex", [" "])
+			set_field_options("sex", ["N/A"])
 		}
 
 		// name of tests
@@ -77,8 +75,7 @@ frappe.ui.form.on('Sample Information', {
 			"NSAIDs / Antibacterial Substances / Nitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone","Organochlorine Compounds ","Organophosphorus Pesticides","PCBs (Non-Dioxin like)","PCBs (Non-Dioxin like)/Organochlorine Compounds","Phenolic Anthelminthics ",
 			"Polymyxin-Colistin","Praziquantel","Pyrethroids","Resorcyclic acid lactones","Rifaximin","Stanozolol (17beta-hydroxystanozolol)",
 			"Stilbenes","Sulphur dioxide","Thyrostats (Anti thyroid agents)","Tiamulin","Trenbolone","Trimethoprim","Zinc Bacitracin","Zinc oxide"				
-						
-])
+						])
 		}
 
 		if (frm.doc.section == "Diagnostics (Serology and Immunology)"){
@@ -165,7 +162,10 @@ frappe.ui.form.on('Sample Information', {
 
 
 	},
-	refresh: function(frm){
+	date_info_registered_ddmmyy: function(frm){
 		frm.doc.info_registered_by_initials = frappe.session.logged_in_user
 	}
 });
+
+
+

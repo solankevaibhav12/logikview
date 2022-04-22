@@ -1,13 +1,11 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:SAM-{YY}-{#######}",
- "creation": "2022-04-11 10:37:48.866655",
+ "creation": "2022-04-15 10:12:46.861653",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "lab_number",
   "primary_details_section",
   "system_reference_number",
   "sample_description",
@@ -45,14 +43,17 @@
   "column_break_35",
   "date_lo_inserting_discard_info",
   "date_sent_to_subcontracted_lab_where_applicable",
-  "lo_inserting_subcontacting_information",
-  "amended_from"
+  "lo_inserting_subcontacting_information"
  ],
  "fields": [
   {
+   "fieldname": "primary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Details"
+  },
+  {
    "fieldname": "system_reference_number",
    "fieldtype": "Link",
-   "in_global_search": 1,
    "in_list_view": 1,
    "label": "System Reference Number",
    "options": "Lab Information",
@@ -65,6 +66,10 @@
    "label": "Sample Description"
   },
   {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
    "default": "0",
    "fieldname": "number_of_sub_samples",
    "fieldtype": "Int",
@@ -73,23 +78,23 @@
    "reqd": 1
   },
   {
-   "fieldname": "name_of_tests",
+   "fieldname": "section",
    "fieldtype": "Select",
-   "in_global_search": 1,
-   "in_standard_filter": 1,
-   "label": "Name of Test(s)",
-   "options": "\n17 beta-testosterone\n17 \u03b2-Nortestosterone (nandrolone)\n17-beta-estradiol\nAcetyl Gestagens\nAmitraz\nAnthelminthics: Benzimidazoles / Phenolic Anthelminthics\nAnthelmintics: Avermectins\nAnthelmintics: Benzimidazoles\nAnthelmintics: Phenolic Anthelmintics\nAntibacterial Subsatnaces: Beta-Lactams/Cephalosporins\nAntibacterial Substances\nAntibacterial Substances: Aminoglycosides\nAntibacterial Substances: Beta-Lactams\nAntibacterial Substances: Beta-Lactams/Aminoglycosides/Cephalosporins\nAntibacterial Substances: Beta-Lactams/Amoxicillin/Macrolides\nAntibacterial Substances: Beta-Lactams/Cephalosporins/Macrolides\nAntibacterial Substances: Beta-Lactams/Macrolides\nAntibacterial SUbstances: Cefalexin\nAntibacterial Substances: Sulphonamides\nAnticoccidials\nBeta Agonists\nBeta-Blockers/ Sedatives/ Tranquilizers\nBiogenic Amines (Histamine)\nBoldenone\nCarbadox/ Olaquindox\nCarbamates\nChloramphenicol\nChlortestosterone\nClavulanic Acid\nCocciddiostats / Trimethoprim / Nitroimidazoles\nCoccidiostats\nCoccidiostats / Antibacterial Substances / Nitroimdazoles\nCoccidiostats / Sulphonamides / Chloramphenicol\nCoccidiostats / Sulphonamides / Nitrofurans\nDapsone\nDioxins (PCCDs), Furans (PCDFs) and Dioxin-like PCBs\nDioxins (PCDDs), Furans (PCDFs)\nDyes\nEthinylestradiol\nFlorfenicol\nFormamidine (Amitraz)\nFuminosins\nGlucocorticoids\nHeavy Metals (Fluorine)\nHeavy Metals (Lead, Cadmium)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel, Tin)\nHeavy Metals (Lead, Cadmium, Mercury, Total Arsenic)\nHeavy Metals (Lead, Cadmium, Nickel, Total Arsenic, Copper)\nHeavy Metals: Arsenic\nHeavy Metals: Cadmium\nIonophores\nMethylboldenone\nMethyltestosterone\nMycotoxins (Aflatoxin M1)\nMycotoxins (Aflatoxins B1, B2, G1, G2)\nMycotoxins (Deoxynivalenol)\nMycotoxins (Fumonisins)\nMycotoxins (Ochratoxin A)\nNandrolone (17 beta-19 nortestosterone)\nNitrofuran metabolites\nNitrofurans\nNitrofurans and metabolites\nNitroimidazoles\nNitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nNitroimidazoles and Metabolites\nNovobiocin\nNSAIDs\nNSAIDs / Antibacterial Substances / Benzimidazoles / Phenolic Anthelminthics\nNSAIDs / Antibacterial Substances / Nitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nOrganochlorine Compounds\nOrganophosphorus Pesticides\nPCBs (Non-Dioxin like)\nPCBs (Non-Dioxin like)/Organochlorine Compounds\nPhenolic Anthelminthics\nPolymyxin-Colistin\nPraziquantel\nPyrethroids\nResorcyclic acid lactones\nRifaximin\nStanozolol (17beta-hydroxystanozolol)\nStilbenes\nSulphur dioxide\nThyrostats (Anti thyroid agents)\nTiamulin\nTrenbolone\nTrimethoprim\nZinc Bacitracin\nZinc oxide\nAfrican Horse Sickness\nAvian Influenza (High Pathogenic)\nAvian Influenza (Low Pathogenic)\nBluetongue\nBrucellosis\nClassical Swine Fever\nEnzootic Bovine Leukosis\nFoot and Mouth Disease\nNewcastle Disease\nTransmissible Spongiform Encephalopathies (TSEs)\nDetection of Salmonella spp.\nTotal Bacterial Count\nEnterobacterial Count\nE.coli Count\nDetection of Campylobacter spp.\nDetection of Commensal E.coli\nDetection of Presumptive ESBL-/AmpC-producing Escherichia coli\nDetection of Presumptive OXA-48 like Carbapenamase -producing Escherichia coli\nDetermination of Antimicrobial Resistance of E.coli and Salmonella spp.",
+   "in_list_view": 1,
+   "label": "Section",
+   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance",
    "reqd": 1
   },
   {
-   "fieldname": "section",
+   "fieldname": "section_and_other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Test and Sample Details"
+  },
+  {
+   "fieldname": "name_of_tests",
    "fieldtype": "Select",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Section",
-   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance",
+   "label": "Name of Test(s)",
+   "options": "\n17 beta-testosterone\n17 \u03b2-Nortestosterone (nandrolone)\n17-beta-estradiol\nAcetyl Gestagens\nAmitraz\nAnthelminthics: Benzimidazoles / Phenolic Anthelminthics\nAnthelmintics: Avermectins\nAnthelmintics: Benzimidazoles\nAnthelmintics: Phenolic Anthelmintics\nAntibacterial Subsatnaces: Beta-Lactams/Cephalosporins\nAntibacterial Substances\nAntibacterial Substances: Aminoglycosides\nAntibacterial Substances: Beta-Lactams\nAntibacterial Substances: Beta-Lactams/Aminoglycosides/Cephalosporins\nAntibacterial Substances: Beta-Lactams/Amoxicillin/Macrolides\nAntibacterial Substances: Beta-Lactams/Cephalosporins/Macrolides\nAntibacterial Substances: Beta-Lactams/Macrolides\nAntibacterial SUbstances: Cefalexin\nAntibacterial Substances: Sulphonamides\nAnticoccidials\nBeta Agonists\nBeta-Blockers/ Sedatives/ Tranquilizers\nBiogenic Amines (Histamine)\nBoldenone\nCarbadox/ Olaquindox\nCarbamates\nChloramphenicol\nChlortestosterone\nClavulanic Acid\nCocciddiostats / Trimethoprim / Nitroimidazoles\nCoccidiostats\nCoccidiostats / Antibacterial Substances / Nitroimdazoles\nCoccidiostats / Sulphonamides / Chloramphenicol\nCoccidiostats / Sulphonamides / Nitrofurans\nDapsone\nDioxins (PCCDs), Furans (PCDFs) and Dioxin-like PCBs\nDioxins (PCDDs), Furans (PCDFs)\nDyes\nEthinylestradiol\nFlorfenicol\nFormamidine (Amitraz)\nFuminosins\nGlucocorticoids\nHeavy Metals (Fluorine)\nHeavy Metals (Lead, Cadmium)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel, Tin)\nHeavy Metals (Lead, Cadmium, Mercury, Total Arsenic)\nHeavy Metals (Lead, Cadmium, Nickel, Total Arsenic, Copper)\nHeavy Metals: Arsenic\nHeavy Metals: Cadmium\nIonophores\nMethylboldenone\nMethyltestosterone\nMycotoxins (Aflatoxin M1)\nMycotoxins (Aflatoxins B1, B2, G1, G2)\nMycotoxins (Deoxynivalenol)\nMycotoxins (Fumonisins)\nMycotoxins (Ochratoxin A)\nNandrolone (17 beta-19 nortestosterone)\nNitrofuran metabolites\nNitrofurans\nNitrofurans and metabolites\nNitroimidazoles\nNitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nNitroimidazoles and Metabolites\nNovobiocin\nNSAIDs\nNSAIDs / Antibacterial Substances / Benzimidazoles / Phenolic Anthelminthics\nNSAIDs / Antibacterial Substances / Nitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nOrganochlorine Compounds\nOrganophosphorus Pesticides\nPCBs (Non-Dioxin like)\nPCBs (Non-Dioxin like)/Organochlorine Compounds\nPhenolic Anthelminthics\nPolymyxin-Colistin\nPraziquantel\nPyrethroids\nResorcyclic acid lactones\nRifaximin\nStanozolol (17beta-hydroxystanozolol)\nStilbenes\nSulphur dioxide\nThyrostats (Anti thyroid agents)\nTiamulin\nTrenbolone\nTrimethoprim\nZinc Bacitracin\nZinc oxide\nAfrican Horse Sickness\nAvian Influenza (High Pathogenic)\nAvian Influenza (Low Pathogenic)\nBluetongue\nBrucellosis\nClassical Swine Fever\nEnzootic Bovine Leukosis\nFoot and Mouth Disease\nNewcastle Disease\nTransmissible Spongiform Encephalopathies (TSEs)\nDetection of Salmonella spp.\nTotal Bacterial Count\nEnterobacterial Count\nE.coli Count\nDetection of Campylobacter spp.\nDetection of Commensal E.coli\nDetection of Presumptive ESBL-/AmpC-producing Escherichia coli\nDetection of Presumptive OXA-48 like Carbapenamase -producing Escherichia coli\nDetermination of Antimicrobial Resistance of E.coli and Salmonella spp.",
    "reqd": 1
   },
   {
@@ -110,6 +115,10 @@
    "label": "House Number"
   },
   {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "ear_tag_no",
    "fieldtype": "Data",
    "label": "Ear Tag No.",
@@ -125,6 +134,12 @@
    "fieldname": "kill_date",
    "fieldtype": "Date",
    "label": "Kill Date"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Other Sample Information"
   },
   {
    "fieldname": "batch_no",
@@ -166,6 +181,10 @@
    "reqd": 1
   },
   {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "amount",
    "fieldtype": "Data",
    "label": "Amount"
@@ -203,9 +222,14 @@
    "reqd": 1
   },
   {
+   "collapsible": 1,
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "Registration Details"
+  },
+  {
    "fieldname": "info_registered_by_initials",
    "fieldtype": "Data",
-   "in_global_search": 1,
    "label": "Info Registered By (Initials)",
    "read_only": 1,
    "reqd": 1
@@ -227,6 +251,10 @@
    "label": "Discarded By"
   },
   {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "date_lo_inserting_discard_info",
    "fieldtype": "Date",
    "label": "Date L.O Inserting Discard Info"
@@ -240,94 +268,17 @@
    "fieldname": "lo_inserting_subcontacting_information",
    "fieldtype": "Data",
    "label": "L.O inserting subcontacting information"
-  },
-  {
-   "fieldname": "lab_number",
-   "fieldtype": "Data",
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "label": "Lab Number",
-   "read_only": 1
-  },
-  {
-   "fieldname": "primary_details_section",
-   "fieldtype": "Section Break",
-   "label": "Primary Details"
-  },
-  {
-   "fieldname": "section_and_other_details_section",
-   "fieldtype": "Section Break",
-   "label": "Test and Sample Details"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_15",
-   "fieldtype": "Section Break",
-   "label": "Other Sample Information"
-  },
-  {
-   "fieldname": "column_break_12",
-   "fieldtype": "Column Break"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_29",
-   "fieldtype": "Section Break",
-   "label": "Registration Details"
-  },
-  {
-   "fieldname": "column_break_23",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_35",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_5",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Sample Information",
-   "print_hide": 1,
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
- "links": [
-  {
-   "link_doctype": "Analysis Information",
-   "link_fieldname": "lab_number_reference"
-  },
-  {
-   "link_doctype": "Chain of Custody",
-   "link_fieldname": "lab_number_reference"
-  }
- ],
- "modified": "2022-04-19 15:12:13.738850",
+ "istable": 1,
+ "links": [],
+ "modified": "2022-04-18 11:24:10.619142",
  "modified_by": "Administrator",
  "module": "Logikview App",
- "name": "Sample Information",
+ "name": "Sample Information Child Table",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC"
 }

@@ -1,18 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series.-.####",
+ "autoname": "format:LAB-IN-{#####}",
  "creation": "2022-04-10 12:14:16.987814",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "primary_details_section",
-  "naming_series",
   "system_reference_number",
+  "primary_details_section",
   "batch_code",
-  "column_break_3",
   "customer_sample_reference",
+  "column_break_3",
   "security_seal_no",
   "section_break_3",
   "sampling_date",
@@ -24,30 +23,35 @@
   "section_break_13",
   "date_sample_received",
   "time_sample_received",
+  "column_break_18",
   "received_by_lab_officer",
   "recorded_by_lab_officer",
   "sample_status_details_section",
   "submission_form_status",
   "sample_state_on_receipt",
+  "column_break_23",
   "rejected_date",
   "rejection_notification_no",
+  "column_break_26",
   "rejected_by",
   "rejection_reason",
   "rejection_reason_other",
-  "sample_details"
+  "sample_information_details_section",
+  "samples",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "batch_code",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Batch Code",
-   "reqd": 1
+   "label": "Batch Code"
   },
   {
    "fieldname": "customer_sample_reference",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Customer Sample Reference",
    "reqd": 1
   },
@@ -75,6 +79,7 @@
   {
    "fieldname": "sampling_officersender",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "Sampling Officer/Sender",
    "reqd": 1
   },
@@ -82,7 +87,7 @@
    "fieldname": "vrd_unit",
    "fieldtype": "Select",
    "label": "VRD Unit",
-   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit\nSafety of the Food Chain Unit",
+   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit",
    "reqd": 1
   },
   {
@@ -122,13 +127,17 @@
   {
    "fieldname": "sample_state_on_receipt",
    "fieldtype": "Select",
+   "in_global_search": 1,
    "label": "Sample State on Receipt",
    "options": "\nSatisfactory\nNot Satisfactory",
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.submission_form_status== 'Rejected'",
    "fieldname": "rejected_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Rejected Date"
   },
   {
@@ -140,25 +149,22 @@
    "depends_on": "eval:doc.submission_form_status == 'Rejected'",
    "fieldname": "rejected_by",
    "fieldtype": "Data",
-   "label": "Rejected By"
+   "label": "Rejected By",
+   "read_only": 1
   },
   {
+   "depends_on": "eval:doc.submission_form_status=='Rejected'",
    "fieldname": "rejection_reason",
    "fieldtype": "Select",
    "label": "Rejection Reason",
    "mandatory_depends_on": "eval:doc.submission_form_status == 'Rejected'",
-   "options": "Quantity\nSterility Conditions\nWrong Container\nWrong Matrix\nTemperature of Sample\nOther"
+   "options": "\nQuantity\nSterility Conditions\nWrong Container\nWrong Matrix\nTemperature of Sample\nOther"
   },
   {
-   "depends_on": "eval:doc.rejection_reason == 'Other'",
+   "depends_on": "eval:doc.rejection_reason == 'Other' && doc.submission_form_status == 'Rejected'",
    "fieldname": "rejection_reason_other",
    "fieldtype": "Data",
    "label": "Rejection Reason Other"
-  },
-  {
-   "fieldname": "sample_details",
-   "fieldtype": "Attach",
-   "label": "Sample Details"
   },
   {
    "fieldname": "section_break_3",
@@ -172,6 +178,9 @@
   {
    "fieldname": "section",
    "fieldtype": "Select",
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Section",
    "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance"
   },
@@ -181,7 +190,6 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "System Reference Number",
    "read_only": 1,
    "unique": 1
@@ -208,15 +216,48 @@
    "label": "Sample Status Details"
   },
   {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Naming Series",
-   "options": "LAB-INFO"
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample_information_details_section",
+   "fieldtype": "Section Break",
+   "label": "Sample Information Details"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "samples",
+   "fieldtype": "Table",
+   "label": "Samples",
+   "options": "Sample Information Child Table"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lab Information",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2022-04-12 17:08:58.116586",
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Sample Information",
+   "link_fieldname": "system_reference_number"
+  }
+ ],
+ "modified": "2022-04-21 18:08:59.486829",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Lab Information",
@@ -235,6 +276,6 @@
    "write": 1
   }
  ],
- "sort_field": "modified",
+ "sort_field": "section",
  "sort_order": "DESC"
 }

@@ -18,29 +18,36 @@
   "section_break_9",
   "date_of_purchase",
   "location",
+  "column_break_12",
   "calibration",
   "performance_monitoring_status",
   "column_break_14",
   "certificates",
   "maintenance_status",
   "section_break_17",
-  "barcode_label"
+  "barcode_label",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "equipment_id",
    "fieldtype": "Data",
-   "label": "Equipment ID"
+   "label": "Equipment ID",
+   "read_only": 1
   },
   {
    "fieldname": "manufacturer",
    "fieldtype": "Data",
-   "label": "Manufacturer"
+   "in_list_view": 1,
+   "label": "Manufacturer",
+   "reqd": 1
   },
   {
    "fieldname": "supplier",
    "fieldtype": "Data",
-   "label": "Supplier"
+   "in_list_view": 1,
+   "label": "Supplier",
+   "reqd": 1
   },
   {
    "fieldname": "model",
@@ -55,12 +62,16 @@
   {
    "fieldname": "serial_number",
    "fieldtype": "Data",
-   "label": "Serial Number"
+   "in_list_view": 1,
+   "label": "Serial Number",
+   "reqd": 1
   },
   {
    "fieldname": "date_of_purchase",
    "fieldtype": "Date",
-   "label": "Date Of Purchase"
+   "in_list_view": 1,
+   "label": "Date Of Purchase",
+   "reqd": 1
   },
   {
    "fieldname": "location",
@@ -116,11 +127,25 @@
    "fieldname": "section_break_17",
    "fieldtype": "Section Break",
    "label": "Barcode"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Equipment Inventory",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-04-12 11:33:40.453504",
+ "modified": "2022-04-19 11:53:38.235953",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Equipment Inventory",
