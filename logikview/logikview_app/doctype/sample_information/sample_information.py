@@ -20,15 +20,16 @@ class SampleInformation(Document):
 
 		# updating and creating new record in chain of custody
 		if self.amended_from:
-			a = frappe.get_doc('Chain of Custody',{'lab_number_reference':self.amended_from})
-			if a.location_of_sample != self.sample_location:
-					a.location_of_sample = self.sample_location
-					a.save()		
-			else:
-				pass
-		else:
-			pass
-
+			b = frappe.get_doc('Sample Information',{'lab_number':self.amended_from})
+			if b.sample_location != self.sample_location:
+				ls = frappe.get_all('Chain of Custody',{},['lab_number_reference'])
+				for i in ls:
+					if i.get('lab_number_reference') == self.amended_from:
+						a = frappe.get_doc('Chain of Custody',{'lab_number_reference':self.amended_from})
+						if a.location_of_sample != self.sample_location:
+								a.location_of_sample = self.sample_location
+								a.save()		
+		
 
 	
 	
