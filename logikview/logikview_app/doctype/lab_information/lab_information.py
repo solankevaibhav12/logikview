@@ -2,13 +2,7 @@
 # For license information, please see license.txt
 
 
-from curses import ALL_MOUSE_EVENTS
-from io import BufferedReader
-from numpy import append
-import pandas as pd
-from pandas import *
-import xlrd
-import openpyxl
+
 import frappe
 from frappe.model.document import Document
 
