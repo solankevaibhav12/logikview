@@ -4,6 +4,7 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import today
+from frappe.utils.data import getdate
 
 class AnalysisInformation(Document):
 
@@ -14,6 +15,15 @@ class AnalysisInformation(Document):
 			if (self.ccbeta==None or self.ccbeta=='') and (self.ccalpha==None or self.ccalpha=='') and (self.lod==None or self.lod=='') and (self.loq==None or self.ccbeta==''):
 				frappe.throw("At least one of the following fields needs to be filled: [ccbeta, ccalpha, lod, loq] if the section is 'Chemical Analysis'")
 
+		s = frappe.get_doc("Sample Information",{'lab_number':self.lab_number_reference})
+		if getdate(self.date_started) < s.date_info_registered_ddmmyy:
+			frappe.throw("Date Started cannot be less than Date Info Registered from the Sample Information.")
+
+		if getdate(self.date_finalised) < getdate(self.date_started):
+			frappe.throw("Date Finalised cannot be less than Date Started.")
+
+		if getdate(self.date_of_result_issue) < getdate(self.date_finalised):
+			frappe.throw("Date of Result Issue cannot be less than Date Finalised")
 
 	def before_save(self):
 		
@@ -22,7 +32,6 @@ class AnalysisInformation(Document):
 
 		# setting dates automatically when record is created
 		self.date_result_info_registered = today()
-		self.date_comment_for_result_inserted = today()
 		self.date_result_authorised_ddmmyy = today()
 
 
@@ -36,7 +45,7 @@ class AnalysisInformation(Document):
 		else :
 			pass
 
-
+	
 	@frappe.whitelist()
 	def get_section(self):
 		if self.lab_number_reference != '':
@@ -58,3 +67,6 @@ class AnalysisInformation(Document):
 		tests = list(set(t))
 		print(tests)
 		return tests
+
+	 
+	

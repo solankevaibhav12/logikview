@@ -1,8 +1,6 @@
 # Copyright (c) 2022, Dexciss Technology and contributors
 # For license information, please see license.txt
 
-
-
 import frappe
 from frappe.model.document import Document
 
@@ -11,6 +9,10 @@ class LabInformation(Document):
 	def before_save(self):
 		# naming series
 		self.system_reference_number = self.name
+	
+	
+		for i in self.samples:
+			i.system_reference_number = self.name
 
 		# validation
 		if self.date_sample_received < self.sampling_date:
@@ -53,6 +55,9 @@ class LabInformation(Document):
 			a.lo_inserting_subcontacting_information=i.lo_inserting_subcontacting_information
 			a.save()
 			a.submit()
+			
+
+	
 
 	
 			

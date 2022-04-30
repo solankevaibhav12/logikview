@@ -53,11 +53,10 @@
   },
   {
    "fieldname": "system_reference_number",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "System Reference Number",
-   "options": "Lab Information",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "sample_description",
@@ -273,7 +272,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-04-18 11:24:10.619142",
+ "modified": "2022-04-29 11:06:40.866650",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Sample Information Child Table",

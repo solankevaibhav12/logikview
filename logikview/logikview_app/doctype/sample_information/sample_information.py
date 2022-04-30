@@ -5,9 +5,11 @@ import frappe
 from frappe.model.document import Document
 
 class SampleInformation(Document):
+
+
+
 	def before_save(self):
 		self.lab_number = self.name
-
 		
 	def on_submit(self):
 		# new chain of custody
@@ -31,5 +33,6 @@ class SampleInformation(Document):
 								a.save()		
 		
 
+	
 	
 	

@@ -141,6 +141,7 @@
    "label": "Rejected Date"
   },
   {
+   "depends_on": "eval:doc.submission_form_status == 'Rejected'",
    "fieldname": "rejection_notification_no",
    "fieldtype": "Data",
    "label": "Rejection Notification No."
@@ -257,7 +258,7 @@
    "link_fieldname": "system_reference_number"
   }
  ],
- "modified": "2022-04-21 18:08:59.486829",
+ "modified": "2022-04-29 10:55:43.053819",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Lab Information",

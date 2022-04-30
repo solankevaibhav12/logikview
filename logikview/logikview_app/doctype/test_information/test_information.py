@@ -5,7 +5,11 @@
 import frappe
 from frappe.model.document import Document
 
+
 class TestInformation(Document):
 	def before_save(self):
 		self.test_name = self.name
+
+
+
 		
