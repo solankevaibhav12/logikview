@@ -10,6 +10,7 @@ class AnalysisInformation(Document):
 
 		
 	def validate(self):
+		self.get_section()
 		# validation for fields
 		if self.section == "Chemical Analysis":
 			if (self.ccbeta==None or self.ccbeta=='') and (self.ccalpha==None or self.ccalpha=='') and (self.lod==None or self.lod=='') and (self.loq==None or self.ccbeta==''):
@@ -53,7 +54,7 @@ class AnalysisInformation(Document):
 			if s.name_of_tests == self.name_of_test:
 				return s.section
 			else:
-				return frappe.msgprint("Record for '{0}' test not found in Sample Information against Lab Number Reference {1}".format(self.name_of_test,self.lab_number_reference))
+				return frappe.throw("Record for '{0}' test not found in Sample Information against Lab Number Reference {1}".format(self.name_of_test,self.lab_number_reference))
 		else:
 			return frappe.msgprint("Please enter Lab Number Reference")
 
@@ -68,5 +69,6 @@ class AnalysisInformation(Document):
 		print(tests)
 		return tests
 
+	
 	 
 	

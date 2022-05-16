@@ -9,8 +9,9 @@ frappe.ui.form.on('Analysis Information', {
 			'doc':cur_frm.doc,
 			callback: function(r){
 				// console.log(r.message)
-				frm.doc.system_reference = r.message
-				refresh_field('system_reference')
+				frm.set_value('system_reference',r.message)
+				// frm.doc.system_reference = r.message
+				frm.refresh_field('system_reference')
 
 			}
 		})
@@ -19,11 +20,13 @@ frappe.ui.form.on('Analysis Information', {
 			'method':'get_name_of_tests',
 			'doc':cur_frm.doc,
 			callback: function(r){
-				console.log(r.message)
+				// console.log(r.message)
 				set_field_options('name_of_test',r.message)
 				
 			}
 		})
+		
+		
 		
 	},
 
@@ -33,7 +36,7 @@ frappe.ui.form.on('Analysis Information', {
 			'method':'get_section',
 			'doc':frm.doc,
 			callback: function(v){
-				console.log(v.message)
+				// console.log(v.message)
 				frm.doc.section = v.message
 				refresh_field('section')
 				
