@@ -73,7 +73,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-22 10:20:50.283715",
+ "modified": "2022-05-23 17:13:41.243957",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Chain of Custody",
@@ -93,5 +93,8 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

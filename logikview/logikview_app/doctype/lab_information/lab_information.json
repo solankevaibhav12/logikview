@@ -9,17 +9,18 @@
  "field_order": [
   "system_reference_number",
   "primary_details_section",
-  "batch_code",
   "customer_sample_reference",
-  "column_break_3",
   "security_seal_no",
   "section_break_3",
+  "batch_code",
   "sampling_date",
   "sampling_time",
   "sampling_officersender",
   "column_break_10",
   "section",
+  "name_of_tests",
   "vrd_unit",
+  "client",
   "section_break_13",
   "date_sample_received",
   "time_sample_received",
@@ -27,8 +28,8 @@
   "received_by_lab_officer",
   "recorded_by_lab_officer",
   "sample_status_details_section",
-  "submission_form_status",
   "sample_state_on_receipt",
+  "submission_form_status",
   "column_break_23",
   "rejected_date",
   "rejection_notification_no",
@@ -97,6 +98,7 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval: doc.date_sample_received != null",
    "fieldname": "time_sample_received",
    "fieldtype": "Datetime",
    "label": "Time Sample Received",
@@ -173,10 +175,6 @@
    "label": "Section and VRD Details"
   },
   {
-   "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section",
    "fieldtype": "Select",
    "in_global_search": 1,
@@ -188,8 +186,8 @@
   {
    "fieldname": "system_reference_number",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_global_search": 1,
-   "in_list_view": 1,
    "in_preview": 1,
    "label": "System Reference Number",
    "read_only": 1,
@@ -205,13 +203,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "collapsible": 1,
    "fieldname": "section_break_13",
    "fieldtype": "Section Break",
    "label": "Other Details"
   },
   {
-   "collapsible": 1,
    "fieldname": "sample_status_details_section",
    "fieldtype": "Section Break",
    "label": "Sample Status Details"
@@ -237,6 +233,7 @@
    "allow_bulk_edit": 1,
    "fieldname": "samples",
    "fieldtype": "Table",
+   "hidden": 1,
    "label": "Samples",
    "options": "Sample Information Child Table"
   },
@@ -248,6 +245,17 @@
    "options": "Lab Information",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "name_of_tests",
+   "fieldtype": "Table MultiSelect",
+   "label": "Name of Tests",
+   "options": "MS Sample Table"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "label": "Client"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -258,7 +266,7 @@
    "link_fieldname": "system_reference_number"
   }
  ],
- "modified": "2022-04-29 10:55:43.053819",
+ "modified": "2022-05-26 11:46:01.701971",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Lab Information",
@@ -278,5 +286,8 @@
   }
  ],
  "sort_field": "section",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

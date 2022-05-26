@@ -10,6 +10,10 @@ class AnalysisInformation(Document):
 
 		
 	def validate(self):
+
+		if self.date_result_info_registered > today():
+			frappe.throw("Date Result Info Registered cannot be a future date.")
+
 		self.get_section()
 		# validation for fields
 		if self.section == "Chemical Analysis":
@@ -70,5 +74,16 @@ class AnalysisInformation(Document):
 		return tests
 
 	
-	 
+	@frappe.whitelist()
+	def get_test(self):
+		if self.lab_number_reference != "":
+			a = frappe.get_doc("Sample Information",{"lab_number":self.lab_number_reference})
+			return a.name_of_test
 	
+
+	@frappe.whitelist()
+	def res_date(self):
+		if self.date_result_info_registered > today():
+			frappe.msgprint("Date Result Info Registered cannot be a future date.")
+		else:
+			pass

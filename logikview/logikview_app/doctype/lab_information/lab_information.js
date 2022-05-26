@@ -2,6 +2,26 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Lab Information', {
+
+	// Validation
+
+	before_save: async(frm) => {
+
+		if (frm.is_dirty() && (!frm.is_new())){
+			let promise = new Promise((resolve,reject)=>
+			frappe.confirm(
+				'The document has been modified. Are you sure you want to proceed?',
+				() => resolve(),
+				() => reject()
+			))
+			
+			await promise.catch(() => frappe.throw());
+		}
+		
+	},
+	
+
+
 	section: function(frm) {
 		// vrd unit
 		if (frm.doc.section == "Chemical Analysis"){
@@ -20,6 +40,62 @@ frappe.ui.form.on('Lab Information', {
 
 			set_field_options("vrd_unit", ["Safety of the Food Chain Unit"])
 		}
+
+		// Multiselect Microbiology
+		if (frm.doc.section=="Microbiology"){
+			frm.set_query("name_of_tests", function(){
+				return{
+					"filters": [
+						["Name of Tests", "section", "=", "Microbiology"],
+					]
+				}
+			})
+			}
+	
+			// Multiselect Chemical Analysis
+			if (frm.doc.section=="Chemical Analysis"){
+				frm.set_query("name_of_tests", function(){
+					return{
+						"filters": [
+							["Name of Tests", "section", "=", "Chemical Analysis"],
+						]
+					}
+				})
+				}
+	
+			// Multiselect Diagnostics (Serology and Immunology)
+			if (frm.doc.section=="Diagnostics (Serology and Immunology)"){
+				frm.set_query("name_of_tests", function(){
+					return{
+						"filters": [
+							["Name of Tests", "section", "=", "Diagnostics (Serology and Immunology)"],
+						]
+					}
+				})
+				}
+	
+			// Multiselect others
+	
+			if (frm.doc.section=="Parasitology"){
+				frm.set_query("name_of_tests", function(){
+					return{
+						"filters": [
+							["Name of Tests", "section", "=", "Parasitology"],
+						]
+					}
+				})
+				}
+	
+			if (frm.doc.section=="Antimicrobial Resistance"){
+				frm.set_query("name_of_tests", function(){
+					return{
+						"filters": [
+							["Name of Tests", "section", "=", "Antimicrobial Resistance"],
+						]
+					}
+				})
+				}
+	
 	},
 	received_by_lab_officer: function(frm){
 		frm.doc.recorded_by_lab_officer = frappe.session.logged_in_user
@@ -31,6 +107,58 @@ frappe.ui.form.on('Lab Information', {
 		}
 		refresh_field('rejected_by')
 	},
+
+// Date sample recd validation
+	time_sample_received: function(frm){
+		if (frm.doc.time_sample_received != null){
+		frappe.call({
+			method:'get_date',
+			doc:cur_frm.doc,
+			callback: function(r){
+				console.log(r.message)
+				
+		}
+		})
+	}
+	if (frm.doc.time_sample_received == null){
+		console.log("yessssssssssssssss")
+	}
+		
+	},
+
+	// Sampling date validation
+	sampling_time: function(frm){
+		if (frm.doc.sampling_time != null){
+		frappe.call({
+			method:'get_sam_date',
+			doc:cur_frm.doc,
+			callback: function(r){
+			console.log(r.message)
+		}
+		})}
+
+		else{
+			console.log("yeahhhhhhhhhhhhhhhhh")
+		}
+	},
+
+	// setting options
+	sample_state_on_receipt: function(frm){
+		if (frm.doc.sample_state_on_receipt == "Satisfactory"){
+			set_field_options("submission_form_status",["","Accepted"])
+			frm.refresh_field("submission_form_status")
+			
+		}
+		else if(frm.doc.sample_state_on_receipt == "Not Satisfactory")
+		{
+			set_field_options("submission_form_status",["","Rejected"])
+			frm.refresh_field("submission_form_status")
+		}
+		else{
+			set_field_options("submission_form_status",["","Accepted","Rejected"])
+		}
+		
+	}
 
 
 

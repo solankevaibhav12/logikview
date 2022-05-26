@@ -3,9 +3,13 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import today
+from frappe.utils.data import getdate
 
 class SampleInformation(Document):
-
+	def validate(self):
+		if self.date_info_registered_ddmmyy > today():
+			frappe.msgprint("Registration Date cannot be future date.")
 
 
 	def before_save(self):
@@ -33,6 +37,20 @@ class SampleInformation(Document):
 								a.save()		
 		
 
+	@frappe.whitelist()
+	def get_section_vrd(self):
+		if self.system_reference_number != "":
+			a = frappe.get_doc("Lab Information",{"system_reference_number":self.system_reference_number})
+			return [a.section,a.vrd_unit,a.sample_state_on_receipt,a.batch_code]
+		else:
+			pass
+
+	@frappe.whitelist()
+	def reg_date(self):
+		if self.date_info_registered_ddmmyy > today():
+			frappe.msgprint("Registration Date cannot be future date.")
+		else:
+			pass
+
 	
-	
-	
+
