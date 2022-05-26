@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:LAB-IN-{#####}",
+ "autoname": "format:{##}",
  "creation": "2022-04-10 12:14:16.987814",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -72,7 +72,7 @@
   },
   {
    "fieldname": "sampling_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Time",
    "label": "Sampling Time",
    "mandatory_depends_on": "eval:doc.section=='Microbiology'"
   },
@@ -258,7 +258,7 @@
    "link_fieldname": "system_reference_number"
   }
  ],
- "modified": "2022-04-29 10:55:43.053819",
+ "modified": "2022-05-20 17:37:56.589350",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Lab Information",
