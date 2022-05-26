@@ -2,6 +2,20 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Test Information', {
+	before_save: async(frm) => {
+
+		if (frm.is_dirty() && (!frm.is_new())){
+			let promise = new Promise((resolve,reject)=>
+			frappe.confirm(
+				'The document has been modified. Are you sure you want to proceed?',
+				() => resolve(),
+				() => reject()
+			))
+			
+			await promise.catch(() => frappe.throw());
+		}
+		
+	},
 	section: function(frm) {
 		if (frm.doc.section == "Chemical Analysis"){
 

@@ -28,7 +28,6 @@
    "fieldname": "consumable_id",
    "fieldtype": "Data",
    "in_global_search": 1,
-   "in_list_view": 1,
    "label": "Consumable ID",
    "reqd": 1
   },
@@ -118,7 +117,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-04-19 11:54:49.928736",
+ "modified": "2022-05-26 11:17:24.005012",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Consumable Inventory",
@@ -138,5 +137,8 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

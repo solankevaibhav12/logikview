@@ -2,6 +2,21 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Sample Information', {
+	before_save: async(frm) => {
+
+		if (frm.is_dirty() && (!frm.is_new())){
+			let promise = new Promise((resolve,reject)=>
+			frappe.confirm(
+				'The document has been modified. Are you sure you want to proceed?',
+				() => resolve(),
+				() => reject()
+			))
+			
+			await promise.catch(() => frappe.throw());
+		}
+		
+	},
+
 	section: function(frm) {
 		if (frm.doc.section == "Chemical Analysis"){
 
@@ -159,12 +174,108 @@ frappe.ui.form.on('Sample Information', {
 			set_field_options("sample_collection_point_scp", ["Slaughterhouse","Farm","Retail","Border Inspection Post"])
 		}
 
+		// Multiselect Microbiology
+		if (frm.doc.section=="Microbiology"){
+		frm.set_query("name_of_test", function(){
+			return{
+				"filters": [
+					["Name of Tests", "section", "=", "Microbiology"],
+				]
+			}
+		})
+		}
+
+		// Multiselect Chemical Analysis
+		if (frm.doc.section=="Chemical Analysis"){
+			frm.set_query("name_of_test", function(){
+				return{
+					"filters": [
+						["Name of Tests", "section", "=", "Chemical Analysis"],
+					]
+				}
+			})
+			}
+
+		// Multiselect Diagnostics (Serology and Immunology)
+		if (frm.doc.section=="Diagnostics (Serology and Immunology)"){
+			frm.set_query("name_of_test", function(){
+				return{
+					"filters": [
+						["Name of Tests", "section", "=", "Diagnostics (Serology and Immunology)"],
+					]
+				}
+			})
+			}
+
+		// Multiselect others
+
+		if (frm.doc.section=="Parasitology"){
+			frm.set_query("name_of_test", function(){
+				return{
+					"filters": [
+						["Name of Tests", "section", "=", "Parasitology"],
+					]
+				}
+			})
+			}
+
+		if (frm.doc.section=="Antimicrobial Resistance"){
+			frm.set_query("name_of_test", function(){
+				return{
+					"filters": [
+						["Name of Tests", "section", "=", "Antimicrobial Resistance"],
+					]
+				}
+			})
+			}
+
+
+
+		if (frm.doc.section==""){
+			frm.set_query("name_of_test", function(){
+				return{
+					"filters": [
+					["Name of Tests","section","=",["Diagnostics (Serology and Immunology)","Microbiology","Chemical Analysis"]],
+					]
+				}
+			})
+			}
 
 
 	},
 	date_info_registered_ddmmyy: function(frm){
 		frm.doc.info_registered_by_initials = frappe.session.logged_in_user
-	}
+		if (frm.doc.date_info_registered_ddmmyy != null){
+			frappe.call({
+				'method':'reg_date',
+				doc:cur_frm.doc,
+				callback: function(r){
+
+				}
+			})
+		}
+		else{
+			console.log('date is null')
+		}
+	},
+
+	system_reference_number: function(frm){
+		frappe.call({
+			'method':'get_section_vrd',
+			doc:cur_frm.doc,
+			callback: function(r){
+				console.log(r.message)
+				frm.set_value("section",r.message[0])
+				frm.set_value("vrd_unit",r.message[1])
+				frm.set_value("sample_condition",r.message[2])
+				frm.set_value("batch_no",r.message[3])
+
+			}
+		})
+	
+	},
+
+	
 });
 
 

@@ -8,6 +8,8 @@ class ChainofCustody(Document):
 	def before_save(self):
 		self.chain_of_custody_reference = self.name
 
+		
+
 	@frappe.whitelist()
 	def get_system_ref(self):
 		if self.lab_number_reference != '':

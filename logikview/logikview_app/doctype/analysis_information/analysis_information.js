@@ -3,6 +3,24 @@
 
 frappe.ui.form.on('Analysis Information', {
 
+
+	before_save: async(frm) => {
+
+		if (frm.is_dirty() && (!frm.is_new())){
+			let promise = new Promise((resolve,reject)=>
+			frappe.confirm(
+				'The document has been modified. Are you sure you want to proceed?',
+				() => resolve(),
+				() => reject()
+			))
+			
+			await promise.catch(() => frappe.throw());
+		}
+		
+	},
+
+	
+
 	lab_number_reference: function(frm){
 		frappe.call({
 			'method':'get_sys_ref',
@@ -23,6 +41,16 @@ frappe.ui.form.on('Analysis Information', {
 				// console.log(r.message)
 				set_field_options('name_of_test',r.message)
 				
+			}
+		})
+
+		frappe.call({
+			'method':'get_test',
+			'doc':cur_frm.doc,
+			callback: function(r){
+				console.log(r.message)
+				frm.doc.name_of_tests=r.message
+				frm.refresh_field("name_of_tests")
 			}
 		})
 		
@@ -198,7 +226,27 @@ frappe.ui.form.on('Analysis Information', {
 			refresh_field('comment_for_result_inserted_by')
 		}
 		
-	}
+	},
 
+	// result date info 
+	date_result_info_registered: function(frm){
+
+		if (frm.doc.date_result_info_registered != null){
+			frappe.call({
+				method:'res_date',
+				doc:cur_frm.doc,
+				callback: function(r){
+	
+				}
+			})
+		}
+		else{
+			console.log("date is null")
+		}
+
+		
+	
+	}
+	
 
 });
