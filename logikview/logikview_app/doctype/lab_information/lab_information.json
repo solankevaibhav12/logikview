@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{##}",
+ "autoname": "format:LAB-IN-{#####}",
  "creation": "2022-04-10 12:14:16.987814",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -45,6 +45,7 @@
   {
    "fieldname": "batch_code",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Batch Code"
   },
   {
@@ -87,8 +88,8 @@
   {
    "fieldname": "vrd_unit",
    "fieldtype": "Select",
-   "label": "VRD Unit",
-   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit",
+   "label": "Client",
+   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit\nOther",
    "reqd": 1
   },
   {
@@ -100,7 +101,7 @@
   {
    "depends_on": "eval: doc.date_sample_received != null",
    "fieldname": "time_sample_received",
-   "fieldtype": "Datetime",
+   "fieldtype": "Time",
    "label": "Time Sample Received",
    "reqd": 1
   },
@@ -233,7 +234,6 @@
    "allow_bulk_edit": 1,
    "fieldname": "samples",
    "fieldtype": "Table",
-   "hidden": 1,
    "label": "Samples",
    "options": "Sample Information Child Table"
   },
@@ -249,13 +249,15 @@
   {
    "fieldname": "name_of_tests",
    "fieldtype": "Table MultiSelect",
+   "hidden": 1,
    "label": "Name of Tests",
    "options": "MS Sample Table"
   },
   {
+   "depends_on": "eval: doc.vrd_unit == \"Other\"",
    "fieldname": "client",
    "fieldtype": "Data",
-   "label": "Client"
+   "label": "Other"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -266,7 +268,7 @@
    "link_fieldname": "system_reference_number"
   }
  ],
- "modified": "2022-05-26 11:46:01.701971",
+ "modified": "2022-05-26 16:55:29.804049",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Lab Information",

@@ -13,14 +13,14 @@ from frappe.utils import now
 
 class LabInformation(Document):
 	def validate(self):
-		if self.date_sample_received != "":
-			if getdate(self.date_sample_received) != getdate(self.time_sample_received[0:10]):
-				frappe.throw(title="Different Dates Entered",msg="Date in the Time Sample Received cannot be different from Date Sample Received")
+		# if self.date_sample_received != "":
+		# 	if getdate(self.date_sample_received) != getdate(self.time_sample_received[0:10]):
+		# 		frappe.throw(title="Different Dates Entered",msg="Date in the Time Sample Received cannot be different from Date Sample Received")
 
-		if self.sampling_date != "":
-			if getdate(self.sampling_date) != getdate(self.sampling_time[0:10]):
-				frappe.throw(title="Different Dates Entered",msg="Date in the Sampling Time cannot be different from Sampling Date")
-
+		# if self.sampling_date != "":
+		# 	if getdate(self.sampling_date) != getdate(self.sampling_time[0:10]):
+		# 		frappe.throw(title="Different Dates Entered",msg="Date in the Sampling Time cannot be different from Sampling Date")
+		pass
 	
 	def before_save(self):
 		
@@ -35,27 +35,27 @@ class LabInformation(Document):
 			frappe.throw("Date Sample Received cannot be less than Sampling Date")
 
 	def on_submit(self):
-		samp=[]
-		for i in self.name_of_tests:
-			b=str(i)
-			a = frappe.db.sql("select name_of_test from `tabMS Sample Table` where name='{0}'".format(b[14:24]),as_dict=1)
-			print('***********************',a)
-			for j in a:
-				samp.append(j)
-		print(samp)
+		# samp=[]
+		# for i in self.name_of_tests:
+		# 	b=str(i)
+		# 	a = frappe.db.sql("select name_of_test from `tabMS Sample Table` where name='{0}'".format(b[14:24]),as_dict=1)
+		# 	print('***********************',a)
+		# 	for j in a:
+		# 		samp.append(j)
+		# print(samp)
 		
-		for k in samp:
+		# for k in samp:
 		
-			sam = frappe.new_doc("Sample Information")
-			sam.system_reference_number = self.system_reference_number
-			sam.section=self.section
-			sam.name_of_tests = k.get("name_of_test")
-			sam.vrd_unit=self.vrd_unit
-			sam.batch_no = self.batch_code
-			sam.sample_condition= self.sample_state_on_receipt
-			sam.date_info_registered_ddmmyy = today()
-			sam.insert(ignore_mandatory = True)
-			sam.submit()
+		# 	sam = frappe.new_doc("Sample Information")
+		# 	sam.system_reference_number = self.system_reference_number
+		# 	sam.section=self.section
+		# 	sam.name_of_tests = k.get("name_of_test")
+		# 	sam.vrd_unit=self.vrd_unit
+		# 	sam.batch_no = self.batch_code
+		# 	sam.sample_condition= self.sample_state_on_receipt
+		# 	sam.date_info_registered_ddmmyy = today()
+		# 	sam.insert(ignore_mandatory = True)
+		# 	sam.submit()
 
 
 		# creating new document from child table
@@ -96,14 +96,14 @@ class LabInformation(Document):
 			a.submit()
 			
 
-	@frappe.whitelist()
-	def get_date(self):
-		if self.date_sample_received != "":
-			if getdate(self.date_sample_received) != getdate(self.time_sample_received[0:10]):
-				return frappe.throw(title="Different Dates Entered",msg="Date in the Time Sample Received cannot be different from Date Sample Received")
-				# return [type(getdate(self.time_sample_received[0:10]),),getdate(self.time_sample_received[0:10]),self.time_sample_received[0:10]]
-		else:
-			pass
+	# @frappe.whitelist()
+	# def get_date(self):
+	# 	if self.date_sample_received != "":
+	# 		if getdate(self.date_sample_received) != getdate(self.time_sample_received[0:10]):
+	# 			return frappe.throw(title="Different Dates Entered",msg="Date in the Time Sample Received cannot be different from Date Sample Received")
+	# 			# return [type(getdate(self.time_sample_received[0:10]),),getdate(self.time_sample_received[0:10]),self.time_sample_received[0:10]]
+	# 	else:
+	# 		pass
 	
 			
 	@frappe.whitelist()
@@ -116,7 +116,6 @@ class LabInformation(Document):
 			pass
 
 
-		frappe.datetime.now_time()
 
 			
 	

@@ -9,8 +9,8 @@
  "field_order": [
   "lab_number",
   "primary_details_section",
-  "system_reference_number",
   "sample_description",
+  "system_reference_number",
   "column_break_5",
   "number_of_sub_samples",
   "section",
@@ -29,6 +29,7 @@
   "sample_collection_point_scp",
   "vrd_unit",
   "species",
+  "category",
   "breed",
   "matrix",
   "column_break_23",
@@ -54,7 +55,6 @@
    "fieldname": "system_reference_number",
    "fieldtype": "Link",
    "in_global_search": 1,
-   "in_list_view": 1,
    "label": "System Reference Number",
    "options": "Lab Information",
    "reqd": 1
@@ -62,7 +62,7 @@
   {
    "fieldname": "sample_description",
    "fieldtype": "Data",
-   "in_list_view": 1,
+   "hidden": 1,
    "label": "Sample Description"
   },
   {
@@ -76,6 +76,7 @@
   {
    "fieldname": "name_of_tests",
    "fieldtype": "Select",
+   "hidden": 1,
    "in_global_search": 1,
    "in_standard_filter": 1,
    "label": "Name of Test(s)",
@@ -130,6 +131,7 @@
   {
    "fieldname": "batch_no",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Batch No.",
    "read_only": 1
   },
@@ -143,16 +145,16 @@
   {
    "fieldname": "vrd_unit",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "VRD Unit",
    "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "species",
    "fieldtype": "Select",
    "label": "Species",
-   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nPoultry (Duck)\nPoultry (Sea Gull)\nWild birds\nPoultry (Broiler, Layer)\nTurkey\nDuck\nSwine (Fattener, Sow , Boar)\nPoultry (Broiler, Layer,Pullet, Day-old)",
+   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nWild birds\nTurkey",
    "reqd": 1
   },
   {
@@ -194,10 +196,10 @@
   {
    "fieldname": "sample_condition",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Sample Condition",
    "options": "\nSatisfactory\nNot Satisfactory",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "sample_status",
@@ -304,9 +306,13 @@
    "fetch_from": "system_reference_number.name_of_tests",
    "fieldname": "name_of_test",
    "fieldtype": "Table MultiSelect",
-   "hidden": 1,
    "label": "Name of Test",
    "options": "MS Sample Table"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -321,7 +327,7 @@
    "link_fieldname": "lab_number_reference"
   }
  ],
- "modified": "2022-05-26 10:32:39.326896",
+ "modified": "2022-05-26 17:47:07.136460",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Sample Information",

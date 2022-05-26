@@ -26,19 +26,19 @@ frappe.ui.form.on('Lab Information', {
 		// vrd unit
 		if (frm.doc.section == "Chemical Analysis"){
 
-			set_field_options("vrd_unit", ["Trade Unit","Animal Health Unit","Safety of the Food Chain Unit"])
+			set_field_options("vrd_unit", ["Trade Unit","Animal Health Unit","Safety of the Food Chain Unit","Other"])
 		}
 		if(frm.doc.section == "Diagnostics (Serology and Immunology)"){
 
-			set_field_options("vrd_unit", ["Animal Health Unit"])
+			set_field_options("vrd_unit", ["Animal Health Unit","Other"])
 		}
 		if (frm.doc.section == "Microbiology"){
 
-			set_field_options("vrd_unit", ["Animal Health Unit"])
+			set_field_options("vrd_unit", ["Animal Health Unit","Other"])
 		}
 		if (frm.doc.section == "Parasitology"){
 
-			set_field_options("vrd_unit", ["Safety of the Food Chain Unit"])
+			set_field_options("vrd_unit", ["Safety of the Food Chain Unit","Other"])
 		}
 
 		// Multiselect Microbiology
@@ -109,38 +109,38 @@ frappe.ui.form.on('Lab Information', {
 	},
 
 // Date sample recd validation
-	time_sample_received: function(frm){
-		if (frm.doc.time_sample_received != null){
-		frappe.call({
-			method:'get_date',
-			doc:cur_frm.doc,
-			callback: function(r){
-				console.log(r.message)
+	// time_sample_received: function(frm){
+	// 	if (frm.doc.time_sample_received != null){
+	// 	frappe.call({
+	// 		method:'get_date',
+	// 		doc:cur_frm.doc,
+	// 		callback: function(r){
+	// 			console.log(r.message)
 				
-		}
-		})
-	}
-	if (frm.doc.time_sample_received == null){
-		console.log("yessssssssssssssss")
-	}
+	// 	}
+	// 	})
+	// }
+	// if (frm.doc.time_sample_received == null){
+	// 	console.log("yessssssssssssssss")
+	// }
 		
-	},
+	// },
 
 	// Sampling date validation
-	sampling_time: function(frm){
-		if (frm.doc.sampling_time != null){
-		frappe.call({
-			method:'get_sam_date',
-			doc:cur_frm.doc,
-			callback: function(r){
-			console.log(r.message)
-		}
-		})}
+	// sampling_time: function(frm){
+	// 	if (frm.doc.sampling_time != null){
+	// 	frappe.call({
+	// 		method:'get_sam_date',
+	// 		doc:cur_frm.doc,
+	// 		callback: function(r){
+	// 		console.log(r.message)
+	// 	}
+	// 	})}
 
-		else{
-			console.log("yeahhhhhhhhhhhhhhhhh")
-		}
-	},
+	// 	else{
+	// 		console.log("yeahhhhhhhhhhhhhhhhh")
+	// 	}
+	// },
 
 	// setting options
 	sample_state_on_receipt: function(frm){
@@ -166,6 +166,32 @@ frappe.ui.form.on('Lab Information', {
 
 
 frappe.ui.form.on('Sample Information Child Table',{
+	species: function(frm,cdt,cdn){
+		var child = locals[cdt][cdn];
+		if (child.species == "Poultry"){
+			frm.refresh_field('category')
+			frm.fields_dict.samples.grid.update_docfield_property(
+				'category',
+				'options',
+				["Broiler","Layer","Pullet","Day-Old","Duck","Sea Gull"]
+			);
+		}
+
+		else if(child.species == "Swine"){
+			frm.fields_dict.samples.grid.update_docfield_property(
+			"category",
+			'options',
+			["Fattener","Sow","Boar"]);
+		}
+
+		else{
+			frm.refresh_field('category')
+			frm.fields_dict.samples.grid.update_docfield_property(
+				"category",
+				'options'
+				[""]);
+		}
+	},
 
 		section: function(frm,cdt,cdn){
 			var child = locals[cdt][cdn];
@@ -293,7 +319,7 @@ frappe.ui.form.on('Sample Information Child Table',{
 			frm.fields_dict.samples.grid.update_docfield_property(
 				'vrd_unit',
 				'options',
-				["Animal Health Unit"]			);
+				["Animal Health Unit",]			);
 		}
 		else if(child.section=="Parasitology"){
 			frm.fields_dict.samples.grid.update_docfield_property(
@@ -322,25 +348,25 @@ frappe.ui.form.on('Sample Information Child Table',{
 			frm.fields_dict.samples.grid.update_docfield_property(
 				'species',
 				'options',
-				["Bovine","Caprine","Ovine","Poultry","Poultry (Duck)","Poultry (Sea Gull)","Swine","Wild Birds"]);
+				["Bovine","Caprine","Ovine","Poultry","Swine","Wild Birds"]);
 		}
 		else if(child.section=="Microbiology"){
 			frm.fields_dict.samples.grid.update_docfield_property(
 				'species',
 				'options',
-				["Bovine","Ovine","Poultry (Broiler, Layer)","Swine","Turkey","Duck","Caprine"]			);
+				["Bovine","Ovine","Swine","Turkey","Duck","Caprine"]			);
 		}
 		else if(child.section=="Parasitology"){
 			frm.fields_dict.samples.grid.update_docfield_property(
 				'species',
 				'options',
-				["Equine","Swine (Fattener, Sow , Boar)"]			);
+				["Equine","Swine"]			);
 		}
 		else if(child.section=="Antimicrobial Resistance"){
 			frm.fields_dict.samples.grid.update_docfield_property(
 				'species',
 				'options',
-				["Poultry (Broiler, Layer,Pullet, Day-old)","Swine"]		);
+				["Poultry","Swine"]		);
 		}
 
 		// sex

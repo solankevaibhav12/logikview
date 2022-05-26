@@ -44,17 +44,7 @@ frappe.ui.form.on('Analysis Information', {
 		// 	}
 		// })
 
-		frappe.call({
-			'method':'get_test',
-			'doc':cur_frm.doc,
-			callback: function(r){
-				console.log(r.message)
-				frm.doc.name_of_test=r.message
-				frm.set_value("name_of_test",r.message)
-				// frm.set_value("section",r.message)
-				frm.refresh_field("name_of_test")
-			}
-		})
+		
 		
 		frappe.call({
 			'method':'get_section',
@@ -198,6 +188,20 @@ frappe.ui.form.on('Analysis Information', {
 				set_field_options("units", [" "])
 			}
 				
+			}
+
+			
+		})
+
+		frappe.call({
+			'method':'get_test',
+			'doc':cur_frm.doc,
+			callback: function(r){
+				console.log(r.message)
+				// frm.doc.name_of_test=r.message
+				frm.set_value("name_of_test",r.message)
+				// frm.set_value("section",r.message)
+				frm.refresh_field("name_of_test")
 			}
 		})
 		

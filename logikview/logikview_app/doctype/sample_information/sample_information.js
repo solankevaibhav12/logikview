@@ -46,19 +46,19 @@ frappe.ui.form.on('Sample Information', {
 		}
 		if(frm.doc.section == "Diagnostics (Serology and Immunology)"){
 
-			set_field_options("species", ["Bovine","Caprine","Ovine","Poultry","Poultry (Duck)","Poultry (Sea Gull)","Swine","Wild Birds"])
+			set_field_options("species", ["Bovine","Caprine","Ovine","Poultry","Swine","Wild Birds"])
 		}
 		if (frm.doc.section == "Microbiology"){
 
-			set_field_options("species", ["Bovine","Ovine","Poultry (Broiler, Layer)","Swine","Turkey","Duck","Caprine"])
+			set_field_options("species", ["Bovine","Ovine","Poultry","Swine","Turkey","Duck","Caprine"])
 		}
 		if (frm.doc.section == "Parasitology"){
 
-			set_field_options("species", ["Equine","Swine (Fattener, Sow , Boar)"])
+			set_field_options("species", ["Equine","Swine"])
 		}
 		if (frm.doc.section == "Antimicrobial Resistance"){
 
-			set_field_options("species", ["Poultry (Broiler, Layer,Pullet, Day-old)","Swine"])
+			set_field_options("species", ["Poultry","Swine"])
 		}
 		// sex
 		if (frm.doc.section == "Chemical Analysis"){
@@ -244,7 +244,8 @@ frappe.ui.form.on('Sample Information', {
 
 	},
 	date_info_registered_ddmmyy: function(frm){
-		frm.doc.info_registered_by_initials = frappe.session.logged_in_user
+		// frm.doc.info_registered_by_initials = frappe.session.logged_in_user
+		frm.set_value("info_registered_by_initials",frappe.session.logged_in_user)
 		if (frm.doc.date_info_registered_ddmmyy != null){
 			frappe.call({
 				'method':'reg_date',
@@ -274,6 +275,35 @@ frappe.ui.form.on('Sample Information', {
 		})
 	
 	},
+
+	date_sample_discarded: function(frm){
+		if (frm.doc.date_sample_discarded != null){
+			frappe.call({
+				'method':'dis_date',
+				doc:cur_frm.doc,
+				callback: function(r){
+
+				}
+			})
+		}
+		else{
+			console.log('date is null')
+		}
+	},
+
+	species: function(frm){
+		if (frm.doc.species == "Poultry"){
+			set_field_options("category",["Broiler","Layer","Pullet","Day-Old","Duck","Sea Gull"])
+		}
+
+		else if(frm.doc.species == "Swine"){
+			set_field_options("category",["Fattener","Sow","Boar"])
+		}
+
+		else{
+			set_field_options("category",["Fattener","Sow","Boar"])
+		}
+	}
 
 	
 });

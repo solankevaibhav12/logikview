@@ -52,5 +52,10 @@ class SampleInformation(Document):
 		else:
 			pass
 
-	
+	@frappe.whitelist()
+	def dis_date(self):
+		if self.date_sample_discarded > today():
+			frappe.msgprint("Date Sample Discarded cannot be future date.")
+		else:
+			pass
 

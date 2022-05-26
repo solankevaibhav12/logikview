@@ -90,7 +90,10 @@ class AnalysisInformation(Document):
 
 	@frappe.whitelist()
 	def get_section(self):
-		a = frappe.get_doc("Sample Information",{"lab_number":self.lab_number_reference})
-		return a.section
+		if self.lab_number_reference != "":
+			a = frappe.get_doc("Sample Information",{"lab_number":self.lab_number_reference})
+			return a.section
+		else:
+			pass
 
 	

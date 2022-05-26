@@ -9,8 +9,8 @@
   "primary_details_section",
   "system_reference_number",
   "sample_description",
-  "column_break_5",
   "number_of_sub_samples",
+  "column_break_5",
   "section",
   "section_and_other_details_section",
   "name_of_tests",
@@ -26,6 +26,7 @@
   "sample_collection_point_scp",
   "vrd_unit",
   "species",
+  "category",
   "breed",
   "matrix",
   "column_break_23",
@@ -61,6 +62,7 @@
   {
    "fieldname": "sample_description",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Sample Description"
   },
@@ -143,6 +145,7 @@
   {
    "fieldname": "batch_no",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Batch No.",
    "unique": 1
   },
@@ -156,15 +159,15 @@
   {
    "fieldname": "vrd_unit",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "VRD Unit",
-   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit",
-   "reqd": 1
+   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit"
   },
   {
    "fieldname": "species",
    "fieldtype": "Select",
    "label": "Species",
-   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nPoultry (Duck)\nPoultry (Sea Gull)\nWild birds\nPoultry (Broiler, Layer)\nTurkey\nDuck\nSwine (Fattener, Sow , Boar)\nPoultry (Broiler, Layer,Pullet, Day-old)",
+   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nWild birds\nTurkey\nDuck",
    "reqd": 1
   },
   {
@@ -267,12 +270,18 @@
    "fieldname": "lo_inserting_subcontacting_information",
    "fieldtype": "Data",
    "label": "L.O inserting subcontacting information"
+  },
+  {
+   "depends_on": "eval:doc.species == 'Poultry' || doc.species == 'Swine'",
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-04-29 11:06:40.866650",
+ "modified": "2022-05-26 21:08:04.287522",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Sample Information Child Table",
