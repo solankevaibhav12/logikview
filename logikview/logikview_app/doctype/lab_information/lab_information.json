@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:LAB-IN-{#####}",
+ "autoname": "format:{##}",
  "creation": "2022-04-10 12:14:16.987814",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -73,7 +73,7 @@
   },
   {
    "fieldname": "sampling_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Time",
    "label": "Sampling Time",
    "mandatory_depends_on": "eval:doc.section=='Microbiology'"
   },
