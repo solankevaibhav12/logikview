@@ -51,34 +51,34 @@ class AnalysisInformation(Document):
 			pass
 
 	
-	@frappe.whitelist()
-	def get_section(self):
-		if self.lab_number_reference != '':
-			s = frappe.get_doc('Sample Information',{'name':self.lab_number_reference})
-			if s.name_of_tests == self.name_of_test:
-				return s.section
-			else:
-				return frappe.throw("Record for '{0}' test not found in Sample Information against Lab Number Reference {1}".format(self.name_of_test,self.lab_number_reference))
-		else:
-			return frappe.msgprint("Please enter Lab Number Reference")
+	# @frappe.whitelist()
+	# def get_section(self):
+	# 	if self.lab_number_reference != '':
+	# 		s = frappe.get_doc('Sample Information',{'name':self.lab_number_reference})
+	# 		if s.name_of_tests == self.name_of_test:
+	# 			return s.section
+	# 		else:
+	# 			return frappe.throw("Record for '{0}' test not found in Sample Information against Lab Number Reference {1}".format(self.name_of_test,self.lab_number_reference))
+	# 	else:
+	# 		return frappe.msgprint("Please enter Lab Number Reference")
 
-	@frappe.whitelist()
-	def get_name_of_tests(self):
-		g = frappe.get_all('Sample Information',{'docstatus':1},['name'])
-		t = ['']
-		for i in g:
-			r = frappe.get_doc('Sample Information',{'name':i.get('name')})
-			t.append(r.name_of_tests)
-		tests = list(set(t))
-		print(tests)
-		return tests
+	# @frappe.whitelist()
+	# def get_name_of_tests(self):
+	# 	g = frappe.get_all('Sample Information',{'docstatus':1},['name'])
+	# 	t = ['']
+	# 	for i in g:
+	# 		r = frappe.get_doc('Sample Information',{'name':i.get('name')})
+	# 		t.append(r.name_of_tests)
+	# 	tests = list(set(t))
+	# 	print(tests)
+	# 	return tests
 
 	
 	@frappe.whitelist()
 	def get_test(self):
 		if self.lab_number_reference != "":
 			a = frappe.get_doc("Sample Information",{"lab_number":self.lab_number_reference})
-			return a.name_of_test
+			return a.name_of_tests
 	
 
 	@frappe.whitelist()
@@ -87,3 +87,10 @@ class AnalysisInformation(Document):
 			frappe.msgprint("Date Result Info Registered cannot be a future date.")
 		else:
 			pass
+
+	@frappe.whitelist()
+	def get_section(self):
+		a = frappe.get_doc("Sample Information",{"lab_number":self.lab_number_reference})
+		return a.section
+
+	
