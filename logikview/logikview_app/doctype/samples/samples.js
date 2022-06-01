@@ -1,7 +1,8 @@
 // Copyright (c) 2022, Dexciss Technology and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Sample Information', {
+
+frappe.ui.form.on('Samples', {
 	onload: function(frm){
 
 		// Multiselect Microbiology
@@ -61,7 +62,7 @@ frappe.ui.form.on('Sample Information', {
 	
 	
 	
-			if (frm.doc.section==""){
+			if (frm.doc.section==null){
 				frm.set_query("name_of_test", function(){
 					return{
 						"filters": [

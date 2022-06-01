@@ -13,7 +13,7 @@ class ChainofCustody(Document):
 	@frappe.whitelist()
 	def get_system_ref(self):
 		if self.lab_number_reference != '':
-			a = frappe.get_doc('Sample Information',{'lab_number':self.lab_number_reference})
+			a = frappe.get_doc('Samples',{'lab_number':self.lab_number_reference})
 		
 			return a.system_reference_number
 

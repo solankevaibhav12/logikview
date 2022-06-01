@@ -3,10 +3,19 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.model.document import Document
 from frappe.utils import today
 from frappe.utils.data import getdate
 
-class AnalysisInformation(Document):
+class Analysis(Document):
+	
+
+
+# Copyright (c) 2022, Dexciss Technology and contributors
+# For license information, please see license.txt
+
+
+
 
 		
 	def validate(self):
@@ -24,7 +33,7 @@ class AnalysisInformation(Document):
 			if (self.ccbeta==None or self.ccbeta=='') and (self.ccalpha==None or self.ccalpha=='') and (self.lod==None or self.lod=='') and (self.loq==None or self.ccbeta==''):
 				frappe.throw("At least one of the following fields needs to be filled: [ccbeta, ccalpha, lod, loq] if the section is 'Chemical Analysis'")
 
-		s = frappe.get_doc("Sample Information",{'lab_number':self.lab_number_reference})
+		s = frappe.get_doc("Samples",{'lab_number':self.lab_number_reference})
 		if getdate(self.date_started) < s.date_info_registered_ddmmyy:
 			frappe.throw("Date Started cannot be less than Date Info Registered from the Sample Information.")
 
@@ -35,6 +44,7 @@ class AnalysisInformation(Document):
 			frappe.throw("Date of Result Issue cannot be less than Date Finalised")
 
 	def before_save(self):
+		self.name_test()
 		
 		# naming series field
 		self.analysis_number = self.name
@@ -48,7 +58,7 @@ class AnalysisInformation(Document):
 	@frappe.whitelist()
 	def get_sys_ref(self):
 		if self.lab_number_reference!='':
-			a = frappe.get_doc('Sample Information',{'name':self.lab_number_reference})
+			a = frappe.get_doc('Samples',{'name':self.lab_number_reference})
 			b = a.system_reference_number
 			return b
 		else :
@@ -81,7 +91,7 @@ class AnalysisInformation(Document):
 	@frappe.whitelist()
 	def get_test(self):
 		if self.lab_number_reference != "":
-			a = frappe.get_doc("Sample Information",{"lab_number":self.lab_number_reference})
+			a = frappe.get_doc("Samples",{"lab_number":self.lab_number_reference})
 			return a.name_of_tests
 	
 
@@ -95,9 +105,31 @@ class AnalysisInformation(Document):
 	@frappe.whitelist()
 	def get_section(self):
 		if self.lab_number_reference != "":
-			a = frappe.get_doc("Sample Information",{"lab_number":self.lab_number_reference})
+			a = frappe.get_doc("Samples",{"lab_number":self.lab_number_reference})
 			return a.section
 		else:
 			pass
 
-	
+
+	@frappe.whitelist()
+	def name_test(self):
+		doc = frappe.get_doc("Samples",{'name':self.lab_number_reference})
+		if doc.name_of_test:
+			test =[]
+			s = frappe.db.sql("select name_of_test,parent from `tabMS Sample Table` where parenttype='Samples' and parent ='{0}'".format(self.lab_number_reference),as_dict=1)
+			print('5555555555555555',s)
+			for i in s:
+				test.append(i.get('name_of_test'))
+			print('yesssssssssssssss',test)
+			return test
+
+		else:
+				g = frappe.get_all('Samples',{'docstatus':1},['name'])
+				t = ['']
+				for i in g:
+					r = frappe.get_doc('Samples',{'name':i.get('name')})
+					t.append(r.name_of_tests)
+				tests = list(set(t))
+				print('77777777777777777777',tests)
+				return tests
+				

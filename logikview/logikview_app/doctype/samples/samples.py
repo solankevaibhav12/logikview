@@ -3,10 +3,11 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.model.document import Document
 from frappe.utils import today
 from frappe.utils.data import getdate
 
-class SampleInformation(Document):
+class Samples(Document):
 	def validate(self):
 		if self.date_info_registered_ddmmyy > today():
 			frappe.msgprint("Registration Date cannot be future date.")
@@ -14,7 +15,6 @@ class SampleInformation(Document):
 
 	def before_save(self):
 		self.lab_number = self.name
-		
 		
 	def on_submit(self):
 		self.new_analysis()
@@ -31,7 +31,7 @@ class SampleInformation(Document):
 
 		# updating and creating new record in chain of custody
 		if self.amended_from:
-			b = frappe.get_doc('Sample Information',{'lab_number':self.amended_from})
+			b = frappe.get_doc('Samples',{'lab_number':self.amended_from})
 			if b.sample_location != self.sample_location:
 				ls = frappe.get_all('Chain of Custody',{},['lab_number_reference'])
 				for i in ls:
@@ -44,29 +44,30 @@ class SampleInformation(Document):
 
 	def new_analysis(self):
 		samp=[]
-		for i in self.name_of_test:
-			b=str(i)
-			a = frappe.db.sql("select name_of_test from `tabMS Sample Table` where parent='{0}'".format(self.name),as_dict=1)
-			print('***********************',a)
-			for j in a:
-				samp.append(j)
-		print(samp)
+		# for i in self.name_of_test:
+		a = frappe.db.sql("select name_of_test from `tabMS Sample Table` where parent='{0}'".format(self.name),as_dict=1)
+		print('***********************',a)
+		# for j in a:
+		# 	samp.append(j)
+		# print(samp)
 
-		for k in samp:
+		for k in a:
+			print('777777777777777',k)
 			# new analysis information
-			an = frappe.new_doc("Analysis Information")
+			an = frappe.new_doc("Analysis")
 			an.lab_number_reference = self.name
 			an.system_reference = self.system_reference_number
 			an.name_of_test = k.get("name_of_test")
 			an.section=self.section
 			an.status=self.sample_status
 			an.insert(ignore_mandatory=True)
+			an.submit()
 
 
 	@frappe.whitelist()
 	def get_section_vrd(self):
 		if self.system_reference_number != "":
-			a = frappe.get_doc("Lab Information",{"system_reference_number":self.system_reference_number})
+			a = frappe.get_doc("Submissions",{"system_reference_number":self.system_reference_number})
 			return [a.section,a.vrd_unit,a.sample_state_on_receipt,a.batch_code]
 		else:
 			pass
@@ -84,4 +85,5 @@ class SampleInformation(Document):
 			frappe.msgprint("Date Sample Discarded cannot be future date.")
 		else:
 			pass
+
 

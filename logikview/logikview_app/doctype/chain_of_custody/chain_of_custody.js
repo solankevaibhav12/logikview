@@ -8,8 +8,10 @@ frappe.ui.form.on('Chain of Custody', {
 			'doc':cur_frm.doc,
 			callback: function(r){
 				// console.log(r.message)
-				frm.doc.system_reference_number = r.message
-				refresh_field('system_reference_number')
+				// frm.doc.system_reference_number = r.message
+				frm.set_value("system_reference_number",r.message)
+				frm.refresh_field('system_reference_number')
+
 			} 
 
 		})

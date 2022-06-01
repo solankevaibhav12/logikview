@@ -15,12 +15,46 @@
   "column_break_5",
   "start_date",
   "end_date",
+  "section_break_9",
+  "sampling_date",
+  "sampling_time",
+  "name_of_sampler",
+  "column_break_13",
+  "receiver_of_sample",
+  "receipt_date_of_sample",
+  "time_of_receipt",
+  "section_break_16",
+  "who_registered_sample",
+  "date_of_registration",
+  "sample_rejected_by",
+  "rejection_date",
+  "column_break_21",
+  "section_receiving_sample",
+  "officer_receiving_sample_within_section",
+  "date_of_receipt_within_section",
+  "sample_location_within_section",
+  "section_break_25",
+  "lab_officer_analysing_sample",
+  "start_date_of_analysis",
+  "end_date_of_analysis",
+  "lab_officer_inserting_analysis_details",
+  "date_analysis_details_inserted",
+  "column_break_33",
+  "test_report_issued_by",
+  "date_of_test_report_issue",
+  "test_report_authorised_by",
+  "date_of_authorisation",
+  "section_break_35",
+  "who_sent_report_to_customer",
+  "sample_discardedsent_to_sub_contracting_lab_by",
+  "date_of_discardingsubcontracting",
   "amended_from"
  ],
  "fields": [
   {
    "fieldname": "chain_of_custody_reference",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Chain of Custody Reference"
   },
   {
@@ -28,7 +62,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Lab Number Reference",
-   "options": "Sample Information",
+   "options": "Samples",
    "reqd": 1
   },
   {
@@ -66,14 +100,203 @@
   },
   {
    "fieldname": "system_reference_number",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "System Reference Number",
+   "options": "Submissions",
    "read_only": 1
+  },
+  {
+   "fieldname": "sampling_date",
+   "fieldtype": "Date",
+   "label": "Sampling Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sampling_time",
+   "fieldtype": "Time",
+   "label": "Sampling Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_sampler",
+   "fieldtype": "Data",
+   "label": "Name of Sampler",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Sample Details"
+  },
+  {
+   "fieldname": "receiver_of_sample",
+   "fieldtype": "Data",
+   "label": "Receiver of Sample",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receipt_date_of_sample",
+   "fieldtype": "Date",
+   "label": "Receipt Date of Sample",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_of_receipt",
+   "fieldtype": "Time",
+   "label": "Time of Receipt",
+   "reqd": 1
+  },
+  {
+   "fieldname": "who_registered_sample",
+   "fieldtype": "Data",
+   "label": "Sample Registered By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_registration",
+   "fieldtype": "Date",
+   "label": "Date of Registration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sample_rejected_by",
+   "fieldtype": "Data",
+   "label": "Sample Rejected By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rejection_date",
+   "fieldtype": "Date",
+   "label": "Rejection Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_receiving_sample",
+   "fieldtype": "Data",
+   "label": "Section Receiving Sample",
+   "reqd": 1
+  },
+  {
+   "fieldname": "officer_receiving_sample_within_section",
+   "fieldtype": "Data",
+   "label": "Officer Receiving Sample Within Section",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_receipt_within_section",
+   "fieldtype": "Date",
+   "label": "Date of Receipt Within Section",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sample_location_within_section",
+   "fieldtype": "Data",
+   "label": "Sample Location Within Section",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lab_officer_analysing_sample",
+   "fieldtype": "Data",
+   "label": "Lab Officer Analysing Sample",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date_of_analysis",
+   "fieldtype": "Date",
+   "label": "Start Date of Analysis",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date_of_analysis",
+   "fieldtype": "Date",
+   "label": "End Date of Analysis",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lab_officer_inserting_analysis_details",
+   "fieldtype": "Data",
+   "label": "Lab Officer Inserting Analysis Details",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_analysis_details_inserted",
+   "fieldtype": "Date",
+   "label": "Date Analysis Details Inserted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "test_report_issued_by",
+   "fieldtype": "Data",
+   "label": "Test Report Issued By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_test_report_issue",
+   "fieldtype": "Date",
+   "label": "Date of Test Report Issue",
+   "reqd": 1
+  },
+  {
+   "fieldname": "test_report_authorised_by",
+   "fieldtype": "Data",
+   "label": "Test Report Authorised By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_authorisation",
+   "fieldtype": "Date",
+   "label": "Date of Authorisation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "who_sent_report_to_customer",
+   "fieldtype": "Data",
+   "label": "Who Sent Report To Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sample_discardedsent_to_sub_contracting_lab_by",
+   "fieldtype": "Data",
+   "label": "Sample Discarded/Sent to Sub contracting Lab By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_discardingsubcontracting",
+   "fieldtype": "Date",
+   "label": "Date of Discarding/Subcontracting",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Registration Details"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break",
+   "label": "Analysis Details"
+  },
+  {
+   "fieldname": "section_break_35",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-23 17:13:41.243957",
+ "modified": "2022-05-31 17:47:44.190395",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Chain of Custody",
