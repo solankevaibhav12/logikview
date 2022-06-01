@@ -113,23 +113,24 @@ class Analysis(Document):
 
 	@frappe.whitelist()
 	def name_test(self):
-		doc = frappe.get_doc("Samples",{'name':self.lab_number_reference})
-		if doc.name_of_test:
-			test =[]
-			s = frappe.db.sql("select name_of_test,parent from `tabMS Sample Table` where parenttype='Samples' and parent ='{0}'".format(self.lab_number_reference),as_dict=1)
-			print('5555555555555555',s)
-			for i in s:
-				test.append(i.get('name_of_test'))
-			print('yesssssssssssssss',test)
-			return test
+		if self.lab_number_reference !="":
+			doc = frappe.get_doc("Samples",{'name':self.lab_number_reference})
+			if doc.name_of_test:
+				test =[]
+				s = frappe.db.sql("select name_of_test,parent from `tabMS Sample Table` where parenttype='Samples' and parent ='{0}'".format(self.lab_number_reference),as_dict=1)
+				print('5555555555555555',s)
+				for i in s:
+					test.append(i.get('name_of_test'))
+				print('yesssssssssssssss',test)
+				return test
 
-		else:
-				g = frappe.get_all('Samples',{'docstatus':1},['name'])
-				t = ['']
-				for i in g:
-					r = frappe.get_doc('Samples',{'name':i.get('name')})
-					t.append(r.name_of_tests)
-				tests = list(set(t))
-				print('77777777777777777777',tests)
-				return tests
-				
+			else:
+					g = frappe.get_all('Samples',{'docstatus':1},['name'])
+					t = ['']
+					for i in g:
+						r = frappe.get_doc('Samples',{'name':i.get('name')})
+						t.append(r.name_of_tests)
+					tests = list(set(t))
+					print('77777777777777777777',tests)
+					return tests
+					

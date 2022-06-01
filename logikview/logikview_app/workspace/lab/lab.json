@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[]",
  "cards_label": "Master & Reports",
  "category": "Modules",
  "charts": [
@@ -103,9 +104,44 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Others",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lab Information",
+   "link_to": "Lab Information",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sample Information",
+   "link_to": "Sample Information",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Analysis Information",
+   "link_to": "Analysis Information",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2022-05-31 11:59:23.709095",
+ "modified": "2022-06-01 15:03:09.410539",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Lab",
@@ -137,5 +173,6 @@
    "link_to": "Lab Dashboard",
    "type": "Dashboard"
   }
- ]
+ ],
+ "shortcuts_label": ""
 }
