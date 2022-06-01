@@ -55,7 +55,6 @@
   {
    "fieldname": "system_reference_number",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "System Reference Number",
    "read_only": 1
   },
@@ -213,15 +212,16 @@
   {
    "fieldname": "sample_condition",
    "fieldtype": "Data",
-   "label": "Sample Condition",
-   "reqd": 1
+   "hidden": 1,
+   "label": "Sample Condition"
   },
   {
+   "default": "New",
    "fieldname": "sample_status",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Sample Status",
-   "options": "\nNew\nPending\nFinished\nSuspended\nWaiting\nRejected\nApproved",
-   "reqd": 1
+   "options": "\nNew\nPending\nFinished\nSuspended\nWaiting\nRejected\nApproved"
   },
   {
    "collapsible": 1,
