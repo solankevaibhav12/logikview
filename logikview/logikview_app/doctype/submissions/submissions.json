@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:LAB-IN-{#####}",
+ "autoname": "format:{#####}",
  "creation": "2022-05-31 11:44:35.704036",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -11,6 +10,8 @@
   "primary_details_section",
   "customer_sample_reference",
   "security_seal_no",
+  "sample_information_details_section",
+  "samples",
   "section_break_3",
   "batch_code",
   "sampling_date",
@@ -37,8 +38,6 @@
   "rejected_by",
   "rejection_reason",
   "rejection_reason_other",
-  "sample_information_details_section",
-  "samples",
   "amended_from"
  ],
  "fields": [
@@ -47,6 +46,7 @@
    "fieldtype": "Data",
    "hidden": 1,
    "in_global_search": 1,
+   "in_list_view": 1,
    "in_preview": 1,
    "label": "System Reference Number",
    "read_only": 1,
@@ -70,8 +70,7 @@
    "fieldname": "security_seal_no",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Security Seal No.",
-   "reqd": 1
+   "label": "Security Seal No."
   },
   {
    "fieldname": "section_break_3",
@@ -89,8 +88,7 @@
    "fieldname": "sampling_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Sampling Date",
-   "reqd": 1
+   "label": "Sampling Date"
   },
   {
    "fieldname": "sampling_time",
@@ -102,8 +100,7 @@
    "fieldname": "sampling_officersender",
    "fieldtype": "Data",
    "in_global_search": 1,
-   "label": "Sampling Officer/Sender",
-   "reqd": 1
+   "label": "Sampling Officer/Sender"
   },
   {
    "fieldname": "column_break_10",
@@ -129,8 +126,7 @@
    "fieldname": "vrd_unit",
    "fieldtype": "Select",
    "label": "Client",
-   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit\nOther",
-   "reqd": 1
+   "options": "\nAnimal Health Unit\nSafety of the Food Chain Unit\nTrade Unit\nOther"
   },
   {
    "depends_on": "eval: doc.vrd_unit == \"Other\"",
@@ -146,15 +142,13 @@
   {
    "fieldname": "date_sample_received",
    "fieldtype": "Date",
-   "label": "Date Sample Received",
-   "reqd": 1
+   "label": "Date Sample Received"
   },
   {
    "depends_on": "eval: doc.date_sample_received != null",
    "fieldname": "time_sample_received",
    "fieldtype": "Time",
-   "label": "Time Sample Received",
-   "reqd": 1
+   "label": "Time Sample Received"
   },
   {
    "fieldname": "column_break_18",
@@ -164,16 +158,14 @@
    "fieldname": "received_by_lab_officer",
    "fieldtype": "Link",
    "label": "Received By (Lab officer)",
-   "options": "User",
-   "reqd": 1
+   "options": "User"
   },
   {
    "depends_on": "eval:doc.received_by_lab_officer != \"\"",
    "fieldname": "recorded_by_lab_officer",
    "fieldtype": "Data",
    "label": "Recorded By (Lab officer)",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "sample_status_details_section",
@@ -185,15 +177,13 @@
    "fieldtype": "Select",
    "in_global_search": 1,
    "label": "Sample State on Receipt",
-   "options": "\nSatisfactory\nNot Satisfactory",
-   "reqd": 1
+   "options": "\nSatisfactory\nNot Satisfactory"
   },
   {
    "fieldname": "submission_form_status",
    "fieldtype": "Select",
    "label": "Submission Form Status",
-   "options": "\nAccepted\nRejected",
-   "reqd": 1
+   "options": "\nAccepted\nRejected"
   },
   {
    "fieldname": "column_break_23",
@@ -277,7 +267,7 @@
    "link_fieldname": "system_reference_number"
   }
  ],
- "modified": "2022-05-31 14:55:26.510466",
+ "modified": "2022-06-01 17:50:47.016036",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Submissions",
@@ -298,6 +288,7 @@
  ],
  "sort_field": "section",
  "sort_order": "DESC",
+ "title_field": "system_reference_number",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

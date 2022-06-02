@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "autoname": "format:{YY}{######}",
  "creation": "2022-05-31 11:46:35.721361",
  "doctype": "DocType",
@@ -87,8 +86,7 @@
    "fieldname": "number_of_sub_samples",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Number of Sub Samples",
-   "reqd": 1
+   "label": "Number of Sub Samples"
   },
   {
    "fieldname": "section",
@@ -99,8 +97,7 @@
    "in_standard_filter": 1,
    "label": "Section",
    "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "section_and_other_details_section",
@@ -179,8 +176,7 @@
    "fieldname": "sample_collection_point_scp",
    "fieldtype": "Select",
    "label": "Sample Collection Point (SCP)",
-   "options": "\nApiary\nBorder Inspection Post\nDairy (MDP)\nFarm\nFeed Business Operator\nPackaging Centre\nProcessing Centre\nSlaughterhouse\nVessel\nDairy\nFarm\nSlaughterhouse\nWild Bird Regulation Unit\nBorder Inspection Post\nMIA Cargo\nRetail",
-   "reqd": 1
+   "options": "\nApiary\nBorder Inspection Post\nDairy (MDP)\nFarm\nFeed Business Operator\nPackaging Centre\nProcessing Centre\nSlaughterhouse\nVessel\nDairy\nFarm\nSlaughterhouse\nWild Bird Regulation Unit\nBorder Inspection Post\nMIA Cargo\nRetail"
   },
   {
    "fieldname": "vrd_unit",
@@ -194,8 +190,7 @@
    "fieldname": "species",
    "fieldtype": "Select",
    "label": "Species",
-   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nWild birds\nTurkey",
-   "reqd": 1
+   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nWild birds\nTurkey"
   },
   {
    "fieldname": "category",
@@ -211,8 +206,7 @@
    "fieldname": "matrix",
    "fieldtype": "Select",
    "label": "Matrix",
-   "options": "\nBarley\nBlood\nCanned Pet Food\nCanned Tuna\nCorn\nCorned Beef\nDrinking Water\nEggs\nFeed\nFish Meal\nHair\nHoney\nInjection Site\nKidney\nLiver\nMaize\nMilk\nMuscle\nPlasma\nRenal Fat\nSerum\nSoyabean Meal\nUrine\nBlood\nCloacal Swab\nMilk\nTracheal Swab\nCarcass Swab\nChick Liner/s\nCloacal Swab\nDead Chicks\nDust\nDust Swab\nEggs\nEnvironmental Swab (Cages)\nEnvironmental Swab (Door)\nEnvironmental Swab (Drinkers)\nEnvironmental Swab (Extractors)\nEnvironmental Swab (Fans)\nEnvironmental Swab (Feeders)\nEnvironmental Swab (Floor)\nEnvironmental Swab (Wall)\nEnvironmental Swab (Windows)\nEnvironmental Swab (Incubator)\nFaeces\nNeck Skins\nMuscle\nLiver\nRumen Content\nMuscle (Diaphragm Pillar - Transition of the Sinewy Part)\nMuscle (Masseter)\nCaecal content\nSalmonella spp. culture\nE.coli (commensal) culture\nPresumptive ESBL-/AmpC-producing Escherichia coli culture\nMuscle",
-   "reqd": 1
+   "options": "\nBarley\nBlood\nCanned Pet Food\nCanned Tuna\nCorn\nCorned Beef\nDrinking Water\nEggs\nFeed\nFish Meal\nHair\nHoney\nInjection Site\nKidney\nLiver\nMaize\nMilk\nMuscle\nPlasma\nRenal Fat\nSerum\nSoyabean Meal\nUrine\nBlood\nCloacal Swab\nMilk\nTracheal Swab\nCarcass Swab\nChick Liner/s\nCloacal Swab\nDead Chicks\nDust\nDust Swab\nEggs\nEnvironmental Swab (Cages)\nEnvironmental Swab (Door)\nEnvironmental Swab (Drinkers)\nEnvironmental Swab (Extractors)\nEnvironmental Swab (Fans)\nEnvironmental Swab (Feeders)\nEnvironmental Swab (Floor)\nEnvironmental Swab (Wall)\nEnvironmental Swab (Windows)\nEnvironmental Swab (Incubator)\nFaeces\nNeck Skins\nMuscle\nLiver\nRumen Content\nMuscle (Diaphragm Pillar - Transition of the Sinewy Part)\nMuscle (Masseter)\nCaecal content\nSalmonella spp. culture\nE.coli (commensal) culture\nPresumptive ESBL-/AmpC-producing Escherichia coli culture\nMuscle"
   },
   {
    "fieldname": "column_break_23",
@@ -226,21 +220,18 @@
   {
    "fieldname": "age",
    "fieldtype": "Data",
-   "label": "Age",
-   "reqd": 1
+   "label": "Age"
   },
   {
    "fieldname": "sex",
    "fieldtype": "Select",
    "label": "Sex",
-   "options": "Male\nFemale\nN/A",
-   "reqd": 1
+   "options": "Male\nFemale\nN/A"
   },
   {
    "fieldname": "weight",
    "fieldtype": "Data",
-   "label": "Weight",
-   "reqd": 1
+   "label": "Weight"
   },
   {
    "fieldname": "sample_condition",
@@ -254,8 +245,7 @@
    "fieldname": "sample_status",
    "fieldtype": "Select",
    "label": "Sample Status",
-   "options": "\nNew\nPending\nFinished\nSuspended\nWaiting\nRejected\nApproved",
-   "reqd": 1
+   "options": "\nNew\nPending\nFinished\nSuspended\nWaiting\nRejected\nApproved"
   },
   {
    "collapsible": 1,
@@ -268,14 +258,12 @@
    "fieldtype": "Data",
    "in_global_search": 1,
    "label": "Info Registered By (Initials)",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "date_info_registered_ddmmyy",
    "fieldtype": "Date",
-   "label": "Date Info Registered (dd/mm/yy)",
-   "reqd": 1
+   "label": "Date Info Registered (dd/mm/yy)"
   },
   {
    "fieldname": "date_sample_discarded",
@@ -337,7 +325,7 @@
    "link_fieldname": "lab_number_reference"
   }
  ],
- "modified": "2022-05-31 14:56:31.315957",
+ "modified": "2022-06-01 18:00:35.846394",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Samples",
@@ -358,6 +346,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "lab_number",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

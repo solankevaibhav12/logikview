@@ -74,16 +74,14 @@
    "fieldname": "number_of_sub_samples",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Number of Sub Samples",
-   "reqd": 1
+   "label": "Number of Sub Samples"
   },
   {
    "fieldname": "section",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Section",
-   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance",
-   "reqd": 1
+   "options": "\nChemical Analysis\nDiagnostics (Serology and Immunology)\nMicrobiology\nParasitology\nAntimicrobial Resistance"
   },
   {
    "fieldname": "section_and_other_details_section",
@@ -94,8 +92,7 @@
    "fieldname": "name_of_tests",
    "fieldtype": "Select",
    "label": "Name of Test(s)",
-   "options": "\n17 beta-testosterone\n17 \u03b2-Nortestosterone (nandrolone)\n17-beta-estradiol\nAcetyl Gestagens\nAmitraz\nAnthelminthics: Benzimidazoles / Phenolic Anthelminthics\nAnthelmintics: Avermectins\nAnthelmintics: Benzimidazoles\nAnthelmintics: Phenolic Anthelmintics\nAntibacterial Subsatnaces: Beta-Lactams/Cephalosporins\nAntibacterial Substances\nAntibacterial Substances: Aminoglycosides\nAntibacterial Substances: Beta-Lactams\nAntibacterial Substances: Beta-Lactams/Aminoglycosides/Cephalosporins\nAntibacterial Substances: Beta-Lactams/Amoxicillin/Macrolides\nAntibacterial Substances: Beta-Lactams/Cephalosporins/Macrolides\nAntibacterial Substances: Beta-Lactams/Macrolides\nAntibacterial SUbstances: Cefalexin\nAntibacterial Substances: Sulphonamides\nAnticoccidials\nBeta Agonists\nBeta-Blockers/ Sedatives/ Tranquilizers\nBiogenic Amines (Histamine)\nBoldenone\nCarbadox/ Olaquindox\nCarbamates\nChloramphenicol\nChlortestosterone\nClavulanic Acid\nCocciddiostats / Trimethoprim / Nitroimidazoles\nCoccidiostats\nCoccidiostats / Antibacterial Substances / Nitroimdazoles\nCoccidiostats / Sulphonamides / Chloramphenicol\nCoccidiostats / Sulphonamides / Nitrofurans\nDapsone\nDioxins (PCCDs), Furans (PCDFs) and Dioxin-like PCBs\nDioxins (PCDDs), Furans (PCDFs)\nDyes\nEthinylestradiol\nFlorfenicol\nFormamidine (Amitraz)\nFuminosins\nGlucocorticoids\nHeavy Metals (Fluorine)\nHeavy Metals (Lead, Cadmium)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel, Tin)\nHeavy Metals (Lead, Cadmium, Mercury, Total Arsenic)\nHeavy Metals (Lead, Cadmium, Nickel, Total Arsenic, Copper)\nHeavy Metals: Arsenic\nHeavy Metals: Cadmium\nIonophores\nMethylboldenone\nMethyltestosterone\nMycotoxins (Aflatoxin M1)\nMycotoxins (Aflatoxins B1, B2, G1, G2)\nMycotoxins (Deoxynivalenol)\nMycotoxins (Fumonisins)\nMycotoxins (Ochratoxin A)\nNandrolone (17 beta-19 nortestosterone)\nNitrofuran metabolites\nNitrofurans\nNitrofurans and metabolites\nNitroimidazoles\nNitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nNitroimidazoles and Metabolites\nNovobiocin\nNSAIDs\nNSAIDs / Antibacterial Substances / Benzimidazoles / Phenolic Anthelminthics\nNSAIDs / Antibacterial Substances / Nitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nOrganochlorine Compounds\nOrganophosphorus Pesticides\nPCBs (Non-Dioxin like)\nPCBs (Non-Dioxin like)/Organochlorine Compounds\nPhenolic Anthelminthics\nPolymyxin-Colistin\nPraziquantel\nPyrethroids\nResorcyclic acid lactones\nRifaximin\nStanozolol (17beta-hydroxystanozolol)\nStilbenes\nSulphur dioxide\nThyrostats (Anti thyroid agents)\nTiamulin\nTrenbolone\nTrimethoprim\nZinc Bacitracin\nZinc oxide\nAfrican Horse Sickness\nAvian Influenza (High Pathogenic)\nAvian Influenza (Low Pathogenic)\nBluetongue\nBrucellosis\nClassical Swine Fever\nEnzootic Bovine Leukosis\nFoot and Mouth Disease\nNewcastle Disease\nTransmissible Spongiform Encephalopathies (TSEs)\nDetection of Salmonella spp.\nTotal Bacterial Count\nEnterobacterial Count\nE.coli Count\nDetection of Campylobacter spp.\nDetection of Commensal E.coli\nDetection of Presumptive ESBL-/AmpC-producing Escherichia coli\nDetection of Presumptive OXA-48 like Carbapenamase -producing Escherichia coli\nDetermination of Antimicrobial Resistance of E.coli and Salmonella spp.",
-   "reqd": 1
+   "options": "\n17 beta-testosterone\n17 \u03b2-Nortestosterone (nandrolone)\n17-beta-estradiol\nAcetyl Gestagens\nAmitraz\nAnthelminthics: Benzimidazoles / Phenolic Anthelminthics\nAnthelmintics: Avermectins\nAnthelmintics: Benzimidazoles\nAnthelmintics: Phenolic Anthelmintics\nAntibacterial Subsatnaces: Beta-Lactams/Cephalosporins\nAntibacterial Substances\nAntibacterial Substances: Aminoglycosides\nAntibacterial Substances: Beta-Lactams\nAntibacterial Substances: Beta-Lactams/Aminoglycosides/Cephalosporins\nAntibacterial Substances: Beta-Lactams/Amoxicillin/Macrolides\nAntibacterial Substances: Beta-Lactams/Cephalosporins/Macrolides\nAntibacterial Substances: Beta-Lactams/Macrolides\nAntibacterial SUbstances: Cefalexin\nAntibacterial Substances: Sulphonamides\nAnticoccidials\nBeta Agonists\nBeta-Blockers/ Sedatives/ Tranquilizers\nBiogenic Amines (Histamine)\nBoldenone\nCarbadox/ Olaquindox\nCarbamates\nChloramphenicol\nChlortestosterone\nClavulanic Acid\nCocciddiostats / Trimethoprim / Nitroimidazoles\nCoccidiostats\nCoccidiostats / Antibacterial Substances / Nitroimdazoles\nCoccidiostats / Sulphonamides / Chloramphenicol\nCoccidiostats / Sulphonamides / Nitrofurans\nDapsone\nDioxins (PCCDs), Furans (PCDFs) and Dioxin-like PCBs\nDioxins (PCDDs), Furans (PCDFs)\nDyes\nEthinylestradiol\nFlorfenicol\nFormamidine (Amitraz)\nFuminosins\nGlucocorticoids\nHeavy Metals (Fluorine)\nHeavy Metals (Lead, Cadmium)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel, Tin)\nHeavy Metals (Lead, Cadmium, Mercury, Total Arsenic)\nHeavy Metals (Lead, Cadmium, Nickel, Total Arsenic, Copper)\nHeavy Metals: Arsenic\nHeavy Metals: Cadmium\nIonophores\nMethylboldenone\nMethyltestosterone\nMycotoxins (Aflatoxin M1)\nMycotoxins (Aflatoxins B1, B2, G1, G2)\nMycotoxins (Deoxynivalenol)\nMycotoxins (Fumonisins)\nMycotoxins (Ochratoxin A)\nNandrolone (17 beta-19 nortestosterone)\nNitrofuran metabolites\nNitrofurans\nNitrofurans and metabolites\nNitroimidazoles\nNitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nNitroimidazoles and Metabolites\nNovobiocin\nNSAIDs\nNSAIDs / Antibacterial Substances / Benzimidazoles / Phenolic Anthelminthics\nNSAIDs / Antibacterial Substances / Nitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nOrganochlorine Compounds\nOrganophosphorus Pesticides\nPCBs (Non-Dioxin like)\nPCBs (Non-Dioxin like)/Organochlorine Compounds\nPhenolic Anthelminthics\nPolymyxin-Colistin\nPraziquantel\nPyrethroids\nResorcyclic acid lactones\nRifaximin\nStanozolol (17beta-hydroxystanozolol)\nStilbenes\nSulphur dioxide\nThyrostats (Anti thyroid agents)\nTiamulin\nTrenbolone\nTrimethoprim\nZinc Bacitracin\nZinc oxide\nAfrican Horse Sickness\nAvian Influenza (High Pathogenic)\nAvian Influenza (Low Pathogenic)\nBluetongue\nBrucellosis\nClassical Swine Fever\nEnzootic Bovine Leukosis\nFoot and Mouth Disease\nNewcastle Disease\nTransmissible Spongiform Encephalopathies (TSEs)\nDetection of Salmonella spp.\nTotal Bacterial Count\nEnterobacterial Count\nE.coli Count\nDetection of Campylobacter spp.\nDetection of Commensal E.coli\nDetection of Presumptive ESBL-/AmpC-producing Escherichia coli\nDetection of Presumptive OXA-48 like Carbapenamase -producing Escherichia coli\nDetermination of Antimicrobial Resistance of E.coli and Salmonella spp."
   },
   {
    "fieldname": "sample_location",
@@ -152,8 +149,7 @@
    "fieldname": "sample_collection_point_scp",
    "fieldtype": "Select",
    "label": "Sample Collection Point (SCP)",
-   "options": "\nApiary\nBorder Inspection Post\nDairy (MDP)\nFarm\nFeed Business Operator\nPackaging Centre\nProcessing Centre\nSlaughterhouse\nVessel\nDairy\nFarm\nSlaughterhouse\nWild Bird Regulation Unit\nBorder Inspection Post\nMIA Cargo\nRetail",
-   "reqd": 1
+   "options": "\nApiary\nBorder Inspection Post\nDairy (MDP)\nFarm\nFeed Business Operator\nPackaging Centre\nProcessing Centre\nSlaughterhouse\nVessel\nDairy\nFarm\nSlaughterhouse\nWild Bird Regulation Unit\nBorder Inspection Post\nMIA Cargo\nRetail"
   },
   {
    "fieldname": "vrd_unit",
@@ -166,8 +162,7 @@
    "fieldname": "species",
    "fieldtype": "Select",
    "label": "Species",
-   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nWild birds\nTurkey\nDuck",
-   "reqd": 1
+   "options": "\nBees\nBovine\nCaprine\nEquine\nFish\nLagomorph\nMulti Species\nOvine\nPoultry\nSwine\nWild birds\nTurkey\nDuck"
   },
   {
    "fieldname": "breed",
@@ -178,8 +173,7 @@
    "fieldname": "matrix",
    "fieldtype": "Select",
    "label": "Matrix",
-   "options": "\nBarley\nBlood\nCanned Pet Food\nCanned Tuna\nCorn\nCorned Beef\nDrinking Water\nEggs\nFeed\nFish Meal\nHair\nHoney\nInjection Site\nKidney\nLiver\nMaize\nMilk\nMuscle\nPlasma\nRenal Fat\nSerum\nSoyabean Meal\nUrine\nBlood\nCloacal Swab\nMilk\nTracheal Swab\nCarcass Swab\nChick Liner/s\nCloacal Swab\nDead Chicks\nDust\nDust Swab\nEggs\nEnvironmental Swab (Cages)\nEnvironmental Swab (Door)\nEnvironmental Swab (Drinkers)\nEnvironmental Swab (Extractors)\nEnvironmental Swab (Fans)\nEnvironmental Swab (Feeders)\nEnvironmental Swab (Floor)\nEnvironmental Swab (Wall)\nEnvironmental Swab (Windows)\nEnvironmental Swab (Incubator)\nFaeces\nNeck Skins\nMuscle\nLiver\nRumen Content\nMuscle (Diaphragm Pillar - Transition of the Sinewy Part)\nMuscle (Masseter)\nCaecal content\nSalmonella spp. culture\nE.coli (commensal) culture\nPresumptive ESBL-/AmpC-producing Escherichia coli culture\nMuscle",
-   "reqd": 1
+   "options": "\nBarley\nBlood\nCanned Pet Food\nCanned Tuna\nCorn\nCorned Beef\nDrinking Water\nEggs\nFeed\nFish Meal\nHair\nHoney\nInjection Site\nKidney\nLiver\nMaize\nMilk\nMuscle\nPlasma\nRenal Fat\nSerum\nSoyabean Meal\nUrine\nBlood\nCloacal Swab\nMilk\nTracheal Swab\nCarcass Swab\nChick Liner/s\nCloacal Swab\nDead Chicks\nDust\nDust Swab\nEggs\nEnvironmental Swab (Cages)\nEnvironmental Swab (Door)\nEnvironmental Swab (Drinkers)\nEnvironmental Swab (Extractors)\nEnvironmental Swab (Fans)\nEnvironmental Swab (Feeders)\nEnvironmental Swab (Floor)\nEnvironmental Swab (Wall)\nEnvironmental Swab (Windows)\nEnvironmental Swab (Incubator)\nFaeces\nNeck Skins\nMuscle\nLiver\nRumen Content\nMuscle (Diaphragm Pillar - Transition of the Sinewy Part)\nMuscle (Masseter)\nCaecal content\nSalmonella spp. culture\nE.coli (commensal) culture\nPresumptive ESBL-/AmpC-producing Escherichia coli culture\nMuscle"
   },
   {
    "fieldname": "column_break_23",
@@ -193,21 +187,18 @@
   {
    "fieldname": "age",
    "fieldtype": "Data",
-   "label": "Age",
-   "reqd": 1
+   "label": "Age"
   },
   {
    "fieldname": "sex",
    "fieldtype": "Select",
    "label": "Sex",
-   "options": "Male\nFemale\nN/A",
-   "reqd": 1
+   "options": "Male\nFemale\nN/A"
   },
   {
    "fieldname": "weight",
    "fieldtype": "Data",
-   "label": "Weight",
-   "reqd": 1
+   "label": "Weight"
   },
   {
    "fieldname": "sample_condition",
@@ -233,14 +224,12 @@
    "fieldname": "info_registered_by_initials",
    "fieldtype": "Data",
    "label": "Info Registered By (Initials)",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "date_info_registered_ddmmyy",
    "fieldtype": "Date",
-   "label": "Date Info Registered (dd/mm/yy)",
-   "reqd": 1
+   "label": "Date Info Registered (dd/mm/yy)"
   },
   {
    "fieldname": "date_sample_discarded",
@@ -281,7 +270,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-05-30 16:51:13.121923",
+ "modified": "2022-06-01 14:45:54.064718",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Sample Information Child Table",

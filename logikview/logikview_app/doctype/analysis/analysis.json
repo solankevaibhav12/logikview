@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "ANALYSIS.-.#####",
+ "autoname": "format:{lab_number_reference}-ANALYSIS-{#####}",
  "creation": "2022-05-31 11:47:51.506967",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -27,6 +26,7 @@
   "method_used",
   "section_break_18",
   "result",
+  "results",
   "result_information",
   "section_break_21",
   "cut_off_level",
@@ -89,8 +89,10 @@
    "options": "MS Sample Table"
   },
   {
+   "columns": 2,
    "fieldname": "name_of_test",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Name of Test",
    "options": "\n17 beta-testosterone\n17 \u03b2-Nortestosterone (nandrolone)\n17-beta-estradiol\nAcetyl Gestagens\nAmitraz\nAnthelminthics: Benzimidazoles / Phenolic Anthelminthics\nAnthelmintics: Avermectins\nAnthelmintics: Benzimidazoles\nAnthelmintics: Phenolic Anthelmintics\nAntibacterial Subsatnaces: Beta-Lactams/Cephalosporins\nAntibacterial Substances\nAntibacterial Substances: Aminoglycosides\nAntibacterial Substances: Beta-Lactams\nAntibacterial Substances: Beta-Lactams/Aminoglycosides/Cephalosporins\nAntibacterial Substances: Beta-Lactams/Amoxicillin/Macrolides\nAntibacterial Substances: Beta-Lactams/Cephalosporins/Macrolides\nAntibacterial Substances: Beta-Lactams/Macrolides\nAntibacterial SUbstances: Cefalexin\nAntibacterial Substances: Sulphonamides\nAnticoccidials\nBeta Agonists\nBeta-Blockers/ Sedatives/ Tranquilizers\nBiogenic Amines (Histamine)\nBoldenone\nCarbadox/ Olaquindox\nCarbamates\nChloramphenicol\nChlortestosterone\nClavulanic Acid\nCocciddiostats / Trimethoprim / Nitroimidazoles\nCoccidiostats\nCoccidiostats / Antibacterial Substances / Nitroimdazoles\nCoccidiostats / Sulphonamides / Chloramphenicol\nCoccidiostats / Sulphonamides / Nitrofurans\nDapsone\nDioxins (PCCDs), Furans (PCDFs) and Dioxin-like PCBs\nDioxins (PCDDs), Furans (PCDFs)\nDyes\nEthinylestradiol\nFlorfenicol\nFormamidine (Amitraz)\nFuminosins\nGlucocorticoids\nHeavy Metals (Fluorine)\nHeavy Metals (Lead, Cadmium)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel)\nHeavy Metals (Lead, Cadmium, Mercury, Arsenic, Nickel, Tin)\nHeavy Metals (Lead, Cadmium, Mercury, Total Arsenic)\nHeavy Metals (Lead, Cadmium, Nickel, Total Arsenic, Copper)\nHeavy Metals: Arsenic\nHeavy Metals: Cadmium\nIonophores\nMethylboldenone\nMethyltestosterone\nMycotoxins (Aflatoxin M1)\nMycotoxins (Aflatoxins B1, B2, G1, G2)\nMycotoxins (Deoxynivalenol)\nMycotoxins (Fumonisins)\nMycotoxins (Ochratoxin A)\nNandrolone (17 beta-19 nortestosterone)\nNitrofuran metabolites\nNitrofurans\nNitrofurans and metabolites\nNitroimidazoles\nNitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nNitroimidazoles and Metabolites\nNovobiocin\nNSAIDs\nNSAIDs / Antibacterial Substances / Benzimidazoles / Phenolic Anthelminthics\nNSAIDs / Antibacterial Substances / Nitroimidazoles / Nitrofurans / Chloramphenicol / Dapsone\nOrganochlorine Compounds\nOrganophosphorus Pesticides\nPCBs (Non-Dioxin like)\nPCBs (Non-Dioxin like)/Organochlorine Compounds\nPhenolic Anthelminthics\nPolymyxin-Colistin\nPraziquantel\nPyrethroids\nResorcyclic acid lactones\nRifaximin\nStanozolol (17beta-hydroxystanozolol)\nStilbenes\nSulphur dioxide\nThyrostats (Anti thyroid agents)\nTiamulin\nTrenbolone\nTrimethoprim\nZinc Bacitracin\nZinc oxide\nAfrican Horse Sickness\nAvian Influenza (High Pathogenic)\nAvian Influenza (Low Pathogenic)\nBluetongue\nBrucellosis\nClassical Swine Fever\nEnzootic Bovine Leukosis\nFoot and Mouth Disease\nNewcastle Disease\nTransmissible Spongiform Encephalopathies (TSEs)\nDetection of Salmonella spp.\nTotal Bacterial Count\nEnterobacterial Count\nE.coli Count\nDetection of Campylobacter spp.\nDetection of Commensal E.coli\nDetection of Presumptive ESBL-/AmpC-producing Escherichia coli\nDetection of Presumptive OXA-48 like Carbapenamase -producing Escherichia coli\nDetermination of Antimicrobial Resistance of E.coli and Salmonella spp."
   },
@@ -166,6 +168,7 @@
   {
    "fieldname": "result",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Result",
    "options": "\nAbsence\nCompliant\nDetected\nNon-compliant\nPresence\nPositive\nNegative\nNo Salmonella spp Isolated\nSalmonella spp Isolated\nSalmonella serovar listed down eg. Salmonella Kentucky, Salmonella Virchow etc\nCommensal E.coli isolated\nPresumptive ESBL-/AmpC-producing Escherichia coli isolated\nPresumptive OXA-48 like Carbapenamase -producing Escherichia coli isolated\nCampylobacter spp. Isolated  (Name of species of Campylobacter to be included eg. Campyobacter coli, Campylobacter jejuni, ect)\nResistant\nSusceptible"
   },
@@ -285,12 +288,18 @@
    "options": "Analysis Information",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "results",
+   "fieldtype": "Table",
+   "label": "Results",
+   "options": "Analysis Result Child Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-05-31 17:51:52.900807",
+ "modified": "2022-06-01 18:09:10.703348",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Analysis",
@@ -311,6 +320,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "lab_number_reference",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
