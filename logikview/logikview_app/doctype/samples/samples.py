@@ -9,8 +9,12 @@ from frappe.utils.data import getdate
 
 class Samples(Document):
 	def validate(self):
-		if self.date_info_registered_ddmmyy > today():
-			frappe.msgprint("Registration Date cannot be future date.")
+		if self.date_info_registered_ddmmyy:
+			if self.date_info_registered_ddmmyy > today():
+				frappe.throw("Registration Date cannot be future date.")
+
+		else:
+			pass
 
 
 	def before_save(self):
