@@ -10,8 +10,6 @@
   "primary_details_section",
   "customer_sample_reference",
   "security_seal_no",
-  "sample_information_details_section",
-  "samples",
   "section_break_3",
   "batch_code",
   "sampling_date",
@@ -38,7 +36,10 @@
   "rejected_by",
   "rejection_reason",
   "rejection_reason_other",
-  "amended_from"
+  "sample_information_details_section",
+  "samples",
+  "amended_from",
+  "amended_fromm"
  ],
  "fields": [
   {
@@ -245,7 +246,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Lab Information",
+   "options": "Submissions",
    "print_hide": 1,
    "read_only": 1
   },
@@ -254,7 +255,16 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Lab Information",
+   "options": "Submissions",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_fromm",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Submissions",
    "print_hide": 1,
    "read_only": 1
   }
@@ -267,7 +277,7 @@
    "link_fieldname": "system_reference_number"
   }
  ],
- "modified": "2022-06-01 17:50:47.016036",
+ "modified": "2022-06-02 13:29:07.866193",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Submissions",

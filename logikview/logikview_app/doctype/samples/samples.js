@@ -3,7 +3,21 @@
 
 
 frappe.ui.form.on('Samples', {
+
+
 	onload: function(frm){
+		// if (frm.doc.name_of_tests != null){
+		// 	frm.set_df_property("name_of_tests", "hidden", 0) 
+		// }
+		// else {
+		// 	frm.set_df_property("name_of_tests", "hidden", 1)
+		// }
+
+		if (frm.is_new()){
+			frm.set_df_property("name_of_tests", "hidden", 1)
+		}
+
+		
 
 		// Multiselect Microbiology
 		if (frm.doc.section=="Microbiology"){
@@ -78,19 +92,21 @@ frappe.ui.form.on('Samples', {
 	},
 
 	refresh: function(frm){
-		if (frm.doc.name_of_tests != null){
-			frm.set_df_property("name_of_tests", "hidden", 0) 
-		}
-		else{
-			frm.set_df_property("name_of_tests", "hidden", 1)
-		}
+		// if (frm.doc.name_of_tests != null){
+		// 	frm.set_df_property("name_of_tests", "hidden", 0) 
+		// }
+		// else{
+		// 	frm.set_df_property("name_of_tests", "hidden", 1)
+		// }
 
-		if (frm.doc.name_of_tests != null){
-			frm.set_df_property("name_of_test", "hidden", 0) 
-		}
-		else{
-			frm.set_df_property("name_of_test", "hidden", 1)
-		}
+		// if (frm.doc.name_of_tests != null){
+		// 	frm.set_df_property("name_of_test", "hidden", 0) 
+		// }
+		// else{
+		// 	frm.set_df_property("name_of_test", "hidden", 1)
+		// }
+
+		
 	},
 
 

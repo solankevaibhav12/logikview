@@ -21,7 +21,11 @@ class Samples(Document):
 		self.lab_number = self.name
 		
 	def on_submit(self):
-		self.new_analysis()
+		if self.name_of_test:
+			self.new_analysis()
+
+		if self.name_of_tests:
+			self.new_analysis1()
 
 		
 		# new chain of custody
@@ -43,29 +47,40 @@ class Samples(Document):
 						a = frappe.get_doc('Chain of Custody',{'lab_number_reference':self.amended_from})
 						if a.location_of_sample != self.sample_location:
 								a.location_of_sample = self.sample_location
-								a.save()		
+								a.save()
+
+	
 		
 
 	def new_analysis(self):
-		samp=[]
-		# for i in self.name_of_test:
-		a = frappe.db.sql("select name_of_test from `tabMS Sample Table` where parent='{0}'".format(self.name),as_dict=1)
-		print('***********************',a)
-		# for j in a:
-		# 	samp.append(j)
-		# print(samp)
+			samp=[]
+			# for i in self.name_of_test:
+			a = frappe.db.sql("select name_of_test from `tabMS Sample Table` where parent='{0}'".format(self.name),as_dict=1)
+			print('***********************',a)
+			# for j in a:
+			# 	samp.append(j)
+			# print(samp)
 
-		for k in a:
-			print('777777777777777',k)
-			# new analysis information
-			an = frappe.new_doc("Analysis")
-			an.lab_number_reference = self.name
-			an.system_reference = self.system_reference_number
-			an.name_of_test = k.get("name_of_test")
-			an.section=self.section
-			an.status=self.sample_status
-			an.insert(ignore_mandatory=True)
-			an.submit()
+			for k in a:
+				print('777777777777777',k)
+				# new analysis information
+				an = frappe.new_doc("Analysis")
+				an.lab_number_reference = self.name
+				an.system_reference = self.system_reference_number
+				an.name_of_test = k.get("name_of_test")
+				an.section=self.section
+				an.status=self.sample_status
+				an.insert(ignore_mandatory=True)
+
+	def new_analysis1(self):
+		an = frappe.new_doc("Analysis")
+		an.lab_number_reference = self.name
+		an.system_reference = self.system_reference_number
+		an.name_of_test = self.name_of_tests
+		an.section=self.section
+		an.status=self.sample_status
+		an.insert(ignore_mandatory=True)
+
 
 
 	@frappe.whitelist()

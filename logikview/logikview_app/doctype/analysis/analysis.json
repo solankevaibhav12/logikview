@@ -46,7 +46,8 @@
   "date_comment_for_result_inserted",
   "date_result_authorised_ddmmyy",
   "result_authorised_by_initials",
-  "amended_from"
+  "amended_from",
+  "amended_fromm"
  ],
  "fields": [
   {
@@ -276,7 +277,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Analysis Information",
+   "options": "Analysis",
    "print_hide": 1,
    "read_only": 1
   },
@@ -285,7 +286,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Analysis Information",
+   "options": "Analysis",
    "print_hide": 1,
    "read_only": 1
   },
@@ -294,12 +295,21 @@
    "fieldtype": "Table",
    "label": "Results",
    "options": "Analysis Result Child Table"
+  },
+  {
+   "fieldname": "amended_fromm",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Analysis",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-06-01 18:09:10.703348",
+ "modified": "2022-06-02 11:11:36.788512",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Analysis",

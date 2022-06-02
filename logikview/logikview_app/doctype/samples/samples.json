@@ -47,7 +47,8 @@
   "date_lo_inserting_discard_info",
   "date_sent_to_subcontracted_lab_where_applicable",
   "lo_inserting_subcontacting_information",
-  "amended_from"
+  "amended_from",
+  "amended_fromm"
  ],
  "fields": [
   {
@@ -105,17 +106,14 @@
    "label": "Test and Sample Details"
   },
   {
-   "fetch_from": "system_reference_number.name_of_tests",
    "fieldname": "name_of_test",
    "fieldtype": "Table MultiSelect",
    "label": "Name of Test",
    "options": "MS Sample Table"
   },
   {
-   "depends_on": "eval: doc.name_of_tests != \"\"",
    "fieldname": "name_of_tests",
    "fieldtype": "Select",
-   "hidden": 1,
    "in_global_search": 1,
    "in_standard_filter": 1,
    "label": "Name of Test(s)",
@@ -299,7 +297,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Sample Information",
+   "options": "Samples",
    "print_hide": 1,
    "read_only": 1
   },
@@ -308,7 +306,16 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Sample Information",
+   "options": "Samples",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_fromm",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Samples",
    "print_hide": 1,
    "read_only": 1
   }
@@ -325,7 +332,7 @@
    "link_fieldname": "lab_number_reference"
   }
  ],
- "modified": "2022-06-01 18:00:35.846394",
+ "modified": "2022-06-02 13:10:46.753490",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Samples",

@@ -139,7 +139,7 @@ class Submissions(Document):
 			else:
 				pass
 			an.insert(ignore_mandatory=True)
-			an.submit()
+			
 
 	
 	
