@@ -5,6 +5,12 @@
 
 frappe.ui.form.on('Submissions', {
 
+	// refresh: function(frm){
+	// 	frappe.meta.get_docfield('Sample Information Child Table', 'name_of_tests', cur_frm.doc.name).options = ['', 'Option 1', 'Option 2', 'Option 3'];
+	// 	cur_frm.refresh_field('name_of_tests');
+
+	// },
+
 	// Validation
 
 	before_save: async(frm) => {
@@ -202,13 +208,11 @@ frappe.ui.form.on('Sample Information Child Table',{
 			var child = locals[cdt][cdn];
 
 			
-			
-			
-			
+
 			if (child.section=="Chemical Analysis"){
 
+				console.log("pppppppppppppppppppppp",)
 			
-				frm.refresh_field('name_of_tests')
 			frm.fields_dict.samples.grid.update_docfield_property(
 				'name_of_tests',
 				'options',
@@ -232,7 +236,6 @@ frappe.ui.form.on('Sample Information Child Table',{
 						
 ]
 			);
-			
 			
 				
 		}
@@ -437,11 +440,13 @@ frappe.ui.form.on('Sample Information Child Table',{
 				["Caecal content","Salmonella spp. culture ","E.coli (commensal) culture ","Presumptive ESBL-/AmpC-producing Escherichia coli culture",
 			"Muscle"]		);
 		}
-
+		frm.refresh()
 		child.info_registered_by_initials = frappe.session.logged_in_user
 
 		
-	}
+	},
+
+	
 	
 	
 

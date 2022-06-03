@@ -20,18 +20,18 @@ class Analysis(Document):
 		
 	def validate(self):
 
-		if self.date_result_info_registered != None or "":
-			if self.date_result_info_registered > today():
-				frappe.throw("Date Result Info Registered cannot be a future date.")
-		else:
-			pass
+		# if self.date_result_info_registered != None or "":
+		# 	if self.date_result_info_registered > today():
+		# 		frappe.throw("Date Result Info Registered cannot be a future date.")
+		# else:
+		# 	pass
 
 
 		self.get_section()
 		# validation for fields
-		if self.section == "Chemical Analysis":
-			if (self.ccbeta==None or self.ccbeta=='') and (self.ccalpha==None or self.ccalpha=='') and (self.lod==None or self.lod=='') and (self.loq==None or self.ccbeta==''):
-				frappe.throw("At least one of the following fields needs to be filled: [ccbeta, ccalpha, lod, loq] if the section is 'Chemical Analysis'")
+		# if self.section == "Chemical Analysis":
+		# 	if (self.ccbeta==None or self.ccbeta=='') and (self.ccalpha==None or self.ccalpha=='') and (self.lod==None or self.lod=='') and (self.loq==None or self.ccbeta==''):
+		# 		frappe.throw("At least one of the following fields needs to be filled: [ccbeta, ccalpha, lod, loq] if the section is 'Chemical Analysis'")
 
 		s = frappe.get_doc("Samples",{'lab_number':self.lab_number_reference})
 		if getdate(self.date_started) < s.date_info_registered_ddmmyy:

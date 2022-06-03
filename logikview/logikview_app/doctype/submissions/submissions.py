@@ -128,17 +128,17 @@ class Submissions(Document):
 			a.save()
 			a.submit()
 
-			an = frappe.new_doc("Analysis")
-			an.lab_number_reference = a.name
-			an.system_reference = self.name
-			an.name_of_test = i.name_of_tests
-			an.section=i.section
-			an.status=i.sample_status
-			if i.section == "Chemical Analysis":
-				an.loq=""
-			else:
-				pass
-			an.insert(ignore_mandatory=True)
+			# an = frappe.new_doc("Analysis")
+			# an.lab_number_reference = a.name
+			# an.system_reference = self.name
+			# an.name_of_test = i.name_of_tests
+			# an.section=i.section
+			# an.status=i.sample_status
+			# if i.section == "Chemical Analysis":
+			# 	an.loq=""
+			# else:
+			# 	pass
+			# an.insert(ignore_mandatory=True)
 			
 
 	
