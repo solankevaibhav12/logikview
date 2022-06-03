@@ -10,6 +10,7 @@
   "primary_details_section",
   "customer_sample_reference",
   "security_seal_no",
+  "samples",
   "section_break_3",
   "batch_code",
   "sampling_date",
@@ -27,6 +28,7 @@
   "received_by_lab_officer",
   "recorded_by_lab_officer",
   "sample_status_details_section",
+  "sample_information_details_section",
   "sample_state_on_receipt",
   "submission_form_status",
   "column_break_23",
@@ -36,10 +38,8 @@
   "rejected_by",
   "rejection_reason",
   "rejection_reason_other",
-  "sample_information_details_section",
-  "samples",
-  "amended_from",
-  "amended_fromm"
+  "amended_fromm",
+  "amended_from"
  ],
  "fields": [
   {
@@ -277,7 +277,7 @@
    "link_fieldname": "system_reference_number"
   }
  ],
- "modified": "2022-06-02 13:29:07.866193",
+ "modified": "2022-06-03 05:39:26.428375",
  "modified_by": "Administrator",
  "module": "Logikview App",
  "name": "Submissions",
